@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const projects = [{emoji:'🏗️',tag:'Rezoning',title:'Somerset West Mixed-Use',desc:'Rezoning to Mixed-Use for 24-unit development. Approved in 8 months.',location:'Somerset West',year:'2024'},{emoji:'📐',tag:'Subdivision',title:'Stellenbosch Residential',desc:'4,000m² erf divided into four residential erven.',location:'Stellenbosch',year:'2024'},{emoji:'📋',tag:'Departure',title:'Cape Town Commercial',desc:'Building line relaxation and parking departure for CBD office.',location:'Cape Town',year:'2024'},{emoji:'🔓',tag:'Title Deed',title:'Helderberg Restriction Removal',desc:'Removed 50-year single-dwelling restriction for 6-unit development.',location:'Helderberg',year:'2023'},{emoji:'🏘️',tag:'Rezoning',title:'Cape Town Multi-Unit',desc:'SR1 to GR4 rezoning enabling 18-unit apartment block.',location:'Cape Town',year:'2023'},{emoji:'📊',tag:'Consolidation',title:'Erf Assembly Somerset West',desc:'Three erven consolidated for retirement village project.',location:'Somerset West',year:'2023'}];
+const p = [{e:'🏗️',t:'Rezoning',h:'Somerset West Mixed-Use',d:'24-unit development. Approved in 8 months.',l:'Somerset West',y:'2024'},{e:'📐',t:'Subdivision',h:'Stellenbosch Residential',d:'4,000m² into four erven.',l:'Stellenbosch',y:'2024'},{e:'📋',t:'Departure',h:'Cape Town Commercial',d:'CBD office departure. 4 months.',l:'Cape Town',y:'2024'},{e:'🔓',t:'Title Deed',h:'Helderberg Restriction',d:'Removed 50-year restriction for 6-unit dev.',l:'Helderberg',y:'2023'},{e:'🏘️',t:'Rezoning',h:'Cape Town Multi-Unit',d:'SR1 to GR4. 18-unit apartment block.',l:'Cape Town',y:'2023'},{e:'📊',t:'Consolidation',h:'Somerset West Erf Assembly',d:'Three erven for retirement village.',l:'Somerset West',y:'2023'}];
 ---
-<BaseLayout title="Portfolio — Approved Projects" description="Browse our portfolio of approved town planning projects across Cape Town, Somerset West and Stellenbosch.">
-  <section class="min-h-[30vh] flex items-center"><div class="wrap pt-32 pb-12"><p class="tag mb-6">Our Work</p><h1>Approved Projects<br /><span class="text-gold">Western Cape</span></h1></div></section>
-  <section class="section-sm bg-white"><div class="wrap"><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {projects.map(p => (
-      <div class="card"><div class="h-40 mb-5 flex items-center justify-center text-5xl bg-cream-dark">{p.emoji}</div><span class="tag mb-3">{p.tag}</span><h3 class="text-lg mb-2">{p.title}</h3><p class="text-ink-muted text-sm leading-relaxed mb-5">{p.desc}</p><p class="text-ink-muted text-xs">📍 {p.location} · {p.year}</p></div>
+<BaseLayout title="Portfolio — Approved Projects" description="Approved town planning projects across Cape Town, Somerset West and Stellenbosch.">
+  <section class="min-h-[30vh] flex items-center"><div class="wrap pt-32 pb-12"><span class="tag mb-6">Portfolio</span><h1>Approved <span class="text-brand">projects</span></h1></div></section>
+  <section class="py-24 bg-surface"><div class="wrap"><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {p.map(x => (
+      <div class="card"><div class="h-40 mb-5 flex items-center justify-center text-5xl bg-bg rounded-xl">{x.e}</div><span class="tag mb-3">{x.t}</span><h3 class="text-lg mb-2">{x.h}</h3><p class="text-muted text-sm mb-4">{x.d}</p><p class="text-muted text-xs">📍 {x.l} · {x.y}</p></div>
     ))}
   </div></div></section>
 </BaseLayout>
