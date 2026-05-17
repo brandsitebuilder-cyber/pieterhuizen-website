@@ -1,143 +1,124 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const schema = {"@context":"https://schema.org","@type":"LocalBusiness","name":"Pieterhuizen Planning","description":"Town Planners Cape Town — Rezoning, Subdivisions, Land Use","address":{"@type":"PostalAddress","addressLocality":"Cape Town","addressRegion":"Western Cape","addressCountry":"ZA"},"areaServed":["Cape Town","Somerset West","Stellenbosch","Helderberg Basin","Western Cape"]};
+const schema = {"@context":"https://schema.org","@type":"LocalBusiness","name":"Pieterhuizen Planning","description":"Town Planners Cape Town","address":{"@type":"PostalAddress","addressLocality":"Cape Town","addressRegion":"Western Cape","addressCountry":"ZA"},"areaServed":["Cape Town","Somerset West","Stellenbosch"]};
 ---
+<BaseLayout title="Town Planners Cape Town — Rezoning, Subdivisions & Land Use" description="Professional town planning consultants. Rezoning, subdivisions and land use applications across the Western Cape." schema={schema}>
 
-<BaseLayout title="Expert Town Planners Cape Town — Rezoning, Subdivisions & Land Use" description="Professional town planning consultants. Rezoning, subdivisions, departures and land use applications for Somerset West, Stellenbosch and the Western Cape." schema={schema}>
-
-  <!-- ═══════ HERO ═══════ -->
-  <section class="relative min-h-[95vh] flex items-center overflow-hidden">
-    <!-- Background graphic -->
-    <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute top-0 right-0 w-[60%] h-full opacity-[0.03]" style="background: radial-gradient(circle at 70% 30%, #8B6914 0%, transparent 70%);"></div>
-      <div class="absolute top-[15%] right-[10%] w-72 h-72 border border-brand/10 rounded-full"></div>
-      <div class="absolute bottom-[20%] right-[25%] w-48 h-48 border border-brand/10 rounded-full"></div>
-      <div class="absolute top-[40%] right-[30%] w-24 h-24 bg-brand/5 rounded-full"></div>
-    </div>
-
-    <div class="wrap relative z-10 pt-24 pb-16">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="tag mb-8">Town Planning · Western Cape</span>
-          <h1 class="mb-6">Land use<br />made <span class="text-brand">simple</span></h1>
-          <p class="text-muted text-lg leading-relaxed max-w-md mb-10">
-            Rezoning, subdivisions and land use applications across Cape Town,
-            Somerset West and Stellenbosch.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <a href="/contact/" class="btn-gold text-base px-8 py-4">Free Consultation →</a>
-            <a href="/portfolio/" class="btn-outline text-base px-8 py-4">View Portfolio</a>
-          </div>
-        </div>
-
-        <!-- Visual card stack -->
-        <div class="hidden lg:grid grid-cols-2 gap-4">
-          <div class="space-y-4 pt-8">
-            <div class="card bg-brand/5 border-brand/10 text-center py-10">
-              <div class="text-5xl mb-3">🏗️</div>
-              <p class="font-semibold text-sm">Rezoning</p>
-            </div>
-            <div class="card bg-brand/5 border-brand/10 text-center py-10">
-              <div class="text-5xl mb-3">📋</div>
-              <p class="font-semibold text-sm">Departures</p>
-            </div>
-          </div>
-          <div class="space-y-4">
-            <div class="card bg-brand/5 border-brand/10 text-center py-10">
-              <div class="text-5xl mb-3">📐</div>
-              <p class="font-semibold text-sm">Subdivisions</p>
-            </div>
-            <div class="card bg-brand/5 border-brand/10 text-center py-10">
-              <div class="text-5xl mb-3">🔓</div>
-              <p class="font-semibold text-sm">Title Deeds</p>
-            </div>
-          </div>
+  <!-- ═══ HERO ═══ -->
+  <section class="min-h-screen flex items-center">
+    <div class="wrap pt-28 pb-20">
+      <div class="max-w-3xl anim">
+        <span class="tag mb-10">Western Cape · Town Planning</span>
+        <h1 class="mb-6">Town Planners<br /><span class="text-accent">Cape Town</span></h1>
+        <p class="text-text-muted text-lg leading-relaxed max-w-lg mb-12">Rezoning, subdivisions and land use applications for developers, architects and investors.</p>
+        <div class="flex gap-3">
+          <a href="/contact/" class="btn-primary">Free Consultation →</a>
+          <a href="/portfolio/" class="btn-ghost">View Portfolio</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════ STATS ═══════ -->
-  <div class="bg-ink text-white py-16">
-    <div class="wrap">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div><div class="font-display text-5xl md:text-6xl font-black text-brand-light">50+</div><p class="text-white/40 text-sm mt-2">Projects Approved</p></div>
-        <div><div class="font-display text-5xl md:text-6xl font-black text-brand-light">10+</div><p class="text-white/40 text-sm mt-2">Years Experience</p></div>
-        <div><div class="font-display text-5xl md:text-6xl font-black text-brand-light">5.0</div><p class="text-white/40 text-sm mt-2">Client Rating</p></div>
-        <div><div class="font-display text-5xl md:text-6xl font-black text-brand-light">100%</div><p class="text-white/40 text-sm mt-2">Compliance</p></div>
+  <!-- ═══ STATS ═══ -->
+  <div class="border-y border-border-subtle">
+    <div class="wrap py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div><div class="text-4xl font-semibold text-accent tracking-tight">50+</div><div class="text-text-muted text-xs mt-1">Projects</div></div>
+        <div><div class="text-4xl font-semibold text-accent tracking-tight">10+</div><div class="text-text-muted text-xs mt-1">Years</div></div>
+        <div><div class="text-4xl font-semibold text-accent tracking-tight">5.0</div><div class="text-text-muted text-xs mt-1">Rating</div></div>
+        <div><div class="text-4xl font-semibold text-accent tracking-tight">100%</div><div class="text-text-muted text-xs mt-1">Compliance</div></div>
       </div>
     </div>
   </div>
 
-  <!-- ═══════ SERVICES ═══════ -->
+  <!-- ═══ SERVICES ═══ -->
   <section class="py-24 md:py-32">
     <div class="wrap">
-      <div class="mb-16 max-w-xl">
-        <span class="tag mb-4">Services</span>
-        <h2 class="mb-4">What we do</h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-4">
-        <a href="/services/rezoning/" class="card no-underline text-inherit group aspect-square flex flex-col justify-between">
-          <div><div class="text-5xl mb-6">🏗️</div><h3 class="mb-2 group-hover:text-brand transition-colors">Rezoning</h3><p class="text-muted text-sm">Full applications for Cape Town, Somerset West & Stellenbosch.</p></div>
-          <span class="text-brand text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Learn more →</span>
+      <span class="tag mb-8">Services</span>
+      <div class="grid md:grid-cols-3 gap-px bg-border-subtle">
+        <a href="/services/rezoning/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+          <div class="text-4xl mb-5">🏗️</div>
+          <h3 class="mb-2 group-hover:text-accent transition-colors">Rezoning</h3>
+          <p class="text-text-muted text-sm">Applications for Cape Town, Somerset West and Stellenbosch.</p>
         </a>
-        <a href="/services/subdivisions/" class="card no-underline text-inherit group aspect-square flex flex-col justify-between">
-          <div><div class="text-5xl mb-6">📐</div><h3 class="mb-2 group-hover:text-brand transition-colors">Subdivisions</h3><p class="text-muted text-sm">Erf divisions, consolidations & sectional title schemes.</p></div>
-          <span class="text-brand text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Learn more →</span>
+        <a href="/services/subdivisions/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+          <div class="text-4xl mb-5">📐</div>
+          <h3 class="mb-2 group-hover:text-accent transition-colors">Subdivisions</h3>
+          <p class="text-text-muted text-sm">Erf divisions, consolidations and sectional title schemes.</p>
         </a>
-        <a href="/services/departures/" class="card no-underline text-inherit group aspect-square flex flex-col justify-between">
-          <div><div class="text-5xl mb-6">📋</div><h3 class="mb-2 group-hover:text-brand transition-colors">Departures</h3><p class="text-muted text-sm">Building line relaxations, height, coverage & parking.</p></div>
-          <span class="text-brand text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Learn more →</span>
+        <a href="/services/departures/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+          <div class="text-4xl mb-5">📋</div>
+          <h3 class="mb-2 group-hover:text-accent transition-colors">Departures</h3>
+          <p class="text-text-muted text-sm">Building line relaxations, height, coverage and parking.</p>
         </a>
+        <a href="/services/title-deed-restrictions/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+          <div class="text-4xl mb-5">🔓</div>
+          <h3 class="mb-2 group-hover:text-accent transition-colors">Title Deed</h3>
+          <p class="text-text-muted text-sm">Remove restrictive conditions. Unlock development potential.</p>
+        </a>
+        <a href="/services/development-reports/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+          <div class="text-4xl mb-5">📊</div>
+          <h3 class="mb-2 group-hover:text-accent transition-colors">Dev Reports</h3>
+          <p class="text-text-muted text-sm">Know what your property can become. Delivered in 5–7 days.</p>
+        </a>
+        <div class="bg-bg p-8 md:p-10 flex items-center justify-center">
+          <a href="/contact/" class="text-accent hover:text-accent-hover text-sm font-medium">All services →</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════ LOCATIONS ═══════ -->
-  <section class="py-24 md:py-32 bg-surface">
+  <!-- ═══ LOCATIONS ═══ -->
+  <section class="py-24 md:py-32 border-t border-border-subtle">
     <div class="wrap">
-      <div class="mb-16 max-w-xl">
-        <span class="tag mb-4">Locations</span>
-        <h2 class="mb-4">Where we work</h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-4">
-        <a href="/areas/cape-town/" class="card no-underline text-inherit group text-center py-12">
-          <div class="text-4xl mb-4">🏙️</div>
-          <h3 class="mb-1 group-hover:text-brand transition-colors">Cape Town</h3>
-          <p class="text-muted text-sm">City Bowl · Atlantic Seaboard · Suburbs</p>
+      <span class="tag mb-8">Locations</span>
+      <div class="grid md:grid-cols-3 gap-px bg-border-subtle">
+        <a href="/areas/cape-town/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+          <h3 class="mb-1 group-hover:text-accent transition-colors">Cape Town</h3>
+          <p class="text-text-muted text-sm">City Bowl · Atlantic Seaboard · Suburbs</p>
         </a>
-        <a href="/areas/somerset-west/" class="card no-underline text-inherit group text-center py-12">
-          <div class="text-4xl mb-4">🏘️</div>
-          <h3 class="mb-1 group-hover:text-brand transition-colors">Somerset West</h3>
-          <p class="text-muted text-sm">Helderberg · Strand · Gordon's Bay</p>
+        <a href="/areas/somerset-west/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+          <h3 class="mb-1 group-hover:text-accent transition-colors">Somerset West</h3>
+          <p class="text-text-muted text-sm">Helderberg · Strand · Gordon's Bay</p>
         </a>
-        <a href="/areas/stellenbosch/" class="card no-underline text-inherit group text-center py-12">
-          <div class="text-4xl mb-4">🍇</div>
-          <h3 class="mb-1 group-hover:text-brand transition-colors">Stellenbosch</h3>
-          <p class="text-muted text-sm">Heritage planning · Winelands</p>
+        <a href="/areas/stellenbosch/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+          <h3 class="mb-1 group-hover:text-accent transition-colors">Stellenbosch</h3>
+          <p class="text-text-muted text-sm">Heritage planning · Cape Winelands</p>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ═══════ TESTIMONIALS ═══════ -->
-  <section class="py-24 md:py-32">
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="py-24 md:py-32 border-t border-border-subtle">
     <div class="wrap">
-      <div class="mb-16 max-w-xl"><span class="tag mb-4">Testimonials</span><h2 class="mb-4">Trusted by</h2></div>
-      <div class="grid md:grid-cols-3 gap-4">
-        <div class="card"><p class="text-brand text-sm tracking-[0.3em] mb-6">★★★★★</p><p class="text-muted leading-relaxed italic mb-6">"Navigated a complex rezoning for our development. Approved in 6 months."</p><p class="font-semibold text-sm">Developer, Somerset West</p></div>
-        <div class="card"><p class="text-brand text-sm tracking-[0.3em] mb-6">★★★★★</p><p class="text-muted leading-relaxed italic mb-6">"I rely on their departure applications. They understand design and get results."</p><p class="font-semibold text-sm">Architect, Cape Town</p></div>
-        <div class="card"><p class="text-brand text-sm tracking-[0.3em] mb-6">★★★★★</p><p class="text-muted leading-relaxed italic mb-6">"Their report pointed us to a property with 3× the upside. Essential due diligence."</p><p class="font-semibold text-sm">Investor, Stellenbosch</p></div>
+      <span class="tag mb-8">Testimonials</span>
+      <div class="grid md:grid-cols-3 gap-px bg-border-subtle">
+        <div class="bg-bg p-8">
+          <p class="text-accent text-xs tracking-[0.3em] mb-5">★★★★★</p>
+          <p class="text-text-secondary text-sm leading-relaxed mb-4">"Navigated a complex rezoning others said couldn't be done. Approved in 6 months."</p>
+          <p class="text-text-muted text-xs">Developer, Somerset West</p>
+        </div>
+        <div class="bg-bg p-8">
+          <p class="text-accent text-xs tracking-[0.3em] mb-5">★★★★★</p>
+          <p class="text-text-secondary text-sm leading-relaxed mb-4">"I rely on their departure applications. They understand design intent."</p>
+          <p class="text-text-muted text-xs">Architect, Cape Town</p>
+        </div>
+        <div class="bg-bg p-8">
+          <p class="text-accent text-xs tracking-[0.3em] mb-5">★★★★★</p>
+          <p class="text-text-secondary text-sm leading-relaxed mb-4">"Their report pointed us to a property with 3× the upside."</p>
+          <p class="text-text-muted text-xs">Investor, Stellenbosch</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════ CTA ═══════ -->
-  <section class="py-32 md:py-40 bg-ink text-center">
+  <!-- ═══ CTA ═══ -->
+  <section class="py-32 md:py-40 text-center border-t border-border-subtle">
     <div class="narrow">
-      <h2 class="text-white mb-6">Ready to start<span class="text-brand-light">?</span></h2>
-      <p class="text-white/40 text-lg mb-10">Free land use assessment — response within 24 hours.</p>
-      <a href="/contact/" class="btn-gold text-base px-10 py-4">Get Your Free Consultation</a>
+      <h2 class="mb-6">Ready to <span class="text-accent">start</span>?</h2>
+      <p class="text-text-muted text-lg mb-10">Free land use assessment. Response within 24 hours.</p>
+      <a href="/contact/" class="btn-primary text-base px-8 py-4">Get Your Free Consultation</a>
     </div>
   </section>
 </BaseLayout>

@@ -1,65 +1,57 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @theme {
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --color-bg: #FAF8F5;
-  --color-surface: #FFFFFF;
-  --color-brand: #8B6914;
-  --color-brand-light: #C99A2E;
-  --color-ink: #171410;
-  --color-muted: #6E675E;
-  --color-border: #E8E4DE;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-bg: #08090A;
+  --color-surface: #0F1011;
+  --color-elevated: #191A1B;
+  --color-text: #F7F8F8;
+  --color-text-secondary: #D0D6E0;
+  --color-text-muted: #8A8F98;
+  --color-accent: #C8963E;
+  --color-accent-hover: #D4A85C;
+  --color-border: rgba(255,255,255,0.08);
+  --color-border-subtle: rgba(255,255,255,0.05);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body { @apply bg-bg text-ink font-sans; }
+body { @apply bg-bg text-text font-sans antialiased; }
 
-h1 { @apply font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-[-0.02em]; }
-h2 { @apply font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.08] tracking-[-0.01em]; }
-h3 { @apply font-display text-xl sm:text-2xl font-bold leading-snug; }
+h1 { @apply text-5xl sm:text-6xl md:text-7xl font-medium leading-[1.0] tracking-[-0.022em]; }
+h2 { @apply text-3xl sm:text-4xl md:text-5xl font-medium leading-[1.08] tracking-[-0.018em]; }
+h3 { @apply text-xl sm:text-2xl font-medium leading-snug tracking-[-0.01em]; }
 
-.wrap { @apply max-w-6xl mx-auto px-5 sm:px-8 lg:px-10; }
-.narrow { @apply max-w-3xl mx-auto px-5 sm:px-8; }
+.wrap { @apply max-w-6xl mx-auto px-6 sm:px-8 lg:px-10; }
+.narrow { @apply max-w-2xl mx-auto px-6; }
 
 .btn {
-  @apply inline-flex items-center gap-2 font-sans font-semibold text-sm px-7 py-3.5 
-         transition-all duration-200 active:scale-[0.97] rounded-lg;
+  @apply inline-flex items-center gap-2 font-medium text-sm px-6 py-3 transition-all duration-200;
 }
-.btn-dark { @apply btn bg-ink text-bg hover:bg-ink/85; }
-.btn-gold { @apply btn bg-brand text-white hover:bg-brand-light; }
-.btn-outline { @apply btn border-2 border-ink/20 text-ink hover:border-ink hover:bg-ink hover:text-bg; }
+.btn-primary { @apply btn bg-accent text-bg hover:bg-accent-hover; }
+.btn-ghost { @apply btn bg-[rgba(255,255,255,0.03)] text-text-secondary border border-border-subtle hover:bg-[rgba(255,255,255,0.06)] hover:border-border hover:text-text; }
 
 .card {
-  @apply bg-surface border border-border rounded-2xl p-6 md:p-8
-         hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:border-brand/20
-         transition-all duration-300;
+  @apply bg-[rgba(255,255,255,0.02)] border border-border-subtle hover:bg-[rgba(255,255,255,0.04)] hover:border-border transition-all duration-300;
 }
 
-.tag { @apply inline-block px-3 py-1.5 text-xs font-semibold tracking-wider uppercase rounded-full bg-ink text-bg; }
+.tag { @apply inline-flex items-center px-3 py-1 text-xs font-medium text-accent bg-accent/10 border border-accent/20; }
 
 .form-input {
-  @apply w-full bg-bg border border-border rounded-xl px-4 py-3 text-ink
-         placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all;
+  @apply w-full bg-[rgba(255,255,255,0.02)] border border-border-subtle px-4 py-3 text-text text-sm
+         placeholder:text-text-muted focus:outline-none focus:border-accent/40 focus:ring-1 focus:ring-accent/20 transition-all;
 }
-.form-label { @apply block text-sm font-semibold text-ink mb-1.5; }
+.form-label { @apply block text-xs font-medium text-text-secondary mb-1.5; }
 
-/* Nav */
-.nav { @apply fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-xl border-b border-border; }
-.nav-link { @apply text-muted hover:text-ink transition-colors text-sm font-medium; }
+.nav { @apply fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-xl border-b border-border-subtle; }
+.nav-link { @apply text-text-muted hover:text-text transition-colors text-sm font-medium; }
 
-/* Footer */
-footer { @apply bg-ink text-white/50 py-16; }
-footer h4 { @apply text-white text-sm font-semibold mb-5; }
-footer a { @apply text-white/40 hover:text-brand-light transition-colors text-sm; }
+footer { @apply bg-surface border-t border-border-subtle py-16; }
+footer h4 { @apply text-text text-sm font-semibold mb-5; }
+footer a { @apply text-text-muted hover:text-text transition-colors text-sm; }
 
-/* Animations */
-@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
-.anim { animation: fadeUp 0.7s ease-out both; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+.anim { animation: fadeUp 0.6s ease-out both; }
 .anim-1 { animation-delay: 0.1s; }
 .anim-2 { animation-delay: 0.2s; }
-.anim-3 { animation-delay: 0.3s; }
-.anim-4 { animation-delay: 0.4s; }
