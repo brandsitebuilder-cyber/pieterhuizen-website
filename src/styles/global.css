@@ -17,41 +17,70 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body { @apply bg-bg text-text font-sans antialiased; }
+body { background: #08090A; color: #F7F8F8; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 
-h1 { @apply text-5xl sm:text-6xl md:text-7xl font-medium leading-[1.0] tracking-[-0.022em]; }
-h2 { @apply text-3xl sm:text-4xl md:text-5xl font-medium leading-[1.08] tracking-[-0.018em]; }
-h3 { @apply text-xl sm:text-2xl font-medium leading-snug tracking-[-0.01em]; }
+h1 { font-size: clamp(3rem, 8vw, 4.5rem); font-weight: 500; line-height: 1.0; letter-spacing: -0.022em; }
+h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 500; line-height: 1.08; letter-spacing: -0.018em; }
+h3 { font-size: 1.25rem; font-weight: 500; line-height: 1.5; letter-spacing: -0.01em; }
+@media (min-width: 768px) { h3 { font-size: 1.5rem; } }
 
-.wrap { @apply max-w-6xl mx-auto px-6 sm:px-8 lg:px-10; }
-.narrow { @apply max-w-2xl mx-auto px-6; }
+.wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
+@media (min-width: 640px) { .wrap { padding: 0 2rem; } }
+.narrow { max-width: 42rem; margin: 0 auto; padding: 0 1.5rem; }
 
-.btn {
-  @apply inline-flex items-center gap-2 font-medium text-sm px-6 py-3 transition-all duration-200;
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-weight: 500; font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s;
+  background: #C8963E; color: #08090A;
+  text-decoration: none;
 }
-.btn-primary { @apply btn bg-accent text-bg hover:bg-accent-hover; }
-.btn-ghost { @apply btn bg-[rgba(255,255,255,0.03)] text-text-secondary border border-border-subtle hover:bg-[rgba(255,255,255,0.06)] hover:border-border hover:text-text; }
+.btn-primary:hover { background: #D4A85C; }
 
-.card {
-  @apply bg-[rgba(255,255,255,0.02)] border border-border-subtle hover:bg-[rgba(255,255,255,0.04)] hover:border-border transition-all duration-300;
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-weight: 500; font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s;
+  background: rgba(255,255,255,0.03); color: #D0D6E0;
+  border: 1px solid rgba(255,255,255,0.05);
+  text-decoration: none;
 }
+.btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08); color: #F7F8F8; }
 
-.tag { @apply inline-flex items-center px-3 py-1 text-xs font-medium text-accent bg-accent/10 border border-accent/20; }
+.tag {
+  display: inline-flex; align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem; font-weight: 500;
+  color: #C8963E;
+  background: rgba(200,150,62,0.1);
+  border: 1px solid rgba(200,150,62,0.2);
+}
 
 .form-input {
-  @apply w-full bg-[rgba(255,255,255,0.02)] border border-border-subtle px-4 py-3 text-text text-sm
-         placeholder:text-text-muted focus:outline-none focus:border-accent/40 focus:ring-1 focus:ring-accent/20 transition-all;
+  width: 100%;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 0.75rem 1rem;
+  color: #F7F8F8; font-size: 0.875rem;
 }
-.form-label { @apply block text-xs font-medium text-text-secondary mb-1.5; }
+.form-input::placeholder { color: #8A8F98; }
+.form-input:focus { outline: none; border-color: rgba(200,150,62,0.4); box-shadow: 0 0 0 1px rgba(200,150,62,0.2); }
+.form-label { display: block; font-size: 0.75rem; font-weight: 500; color: #D0D6E0; margin-bottom: 0.375rem; }
 
-.nav { @apply fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-xl border-b border-border-subtle; }
-.nav-link { @apply text-text-muted hover:text-text transition-colors text-sm font-medium; }
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(8,9,10,0.8); backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-link { color: #8A8F98; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: color 0.15s; }
+.nav-link:hover { color: #F7F8F8; }
 
-footer { @apply bg-surface border-t border-border-subtle py-16; }
-footer h4 { @apply text-text text-sm font-semibold mb-5; }
-footer a { @apply text-text-muted hover:text-text transition-colors text-sm; }
+footer { background: #0F1011; border-top: 1px solid rgba(255,255,255,0.05); padding: 4rem 0; }
+footer h4 { color: #F7F8F8; font-size: 0.875rem; font-weight: 600; margin-bottom: 1.25rem; }
+footer a { color: #8A8F98; font-size: 0.875rem; text-decoration: none; transition: color 0.15s; }
+footer a:hover { color: #F7F8F8; }
 
 @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 .anim { animation: fadeUp 0.6s ease-out both; }
-.anim-1 { animation-delay: 0.1s; }
-.anim-2 { animation-delay: 0.2s; }
