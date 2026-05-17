@@ -1,190 +1,127 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const schema = {"@context":"https://schema.org","@type":"LocalBusiness","name":"Pieterhuizen Planning","description":"Expert Town Planners Cape Town — Rezoning, Subdivisions, Land Use Applications","address":{"@type":"PostalAddress","addressLocality":"Cape Town","addressRegion":"Western Cape","addressCountry":"ZA"},"areaServed":["Cape Town","Somerset West","Stellenbosch","Helderberg Basin","Western Cape"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Town Planning Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rezoning Applications"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Subdivisions & Consolidations"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Departures & Consent Use"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Title Deed Restriction Removal"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Property Development Reports"}}]}};
+const schema = {"@context":"https://schema.org","@type":"LocalBusiness","name":"Pieterhuizen Planning","description":"Expert Town Planners Cape Town","address":{"@type":"PostalAddress","addressLocality":"Cape Town","addressRegion":"Western Cape","addressCountry":"ZA"},"areaServed":["Cape Town","Somerset West","Stellenbosch","Helderberg Basin","Western Cape"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Town Planning Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rezoning"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Subdivisions"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Departures"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Title Deed Restrictions"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Development Reports"}}]}};
+const services = [
+  {href:"/services/rezoning/",num:"01",title:"Rezoning & Land Use",desc:"Full applications for Cape Town, Somerset West & Stellenbosch — from feasibility to municipal approval."},
+  {href:"/services/subdivisions/",num:"02",title:"Subdivisions & Consolidations",desc:"Erf divisions, consolidations and sectional title schemes across the Western Cape."},
+  {href:"/services/departures/",num:"03",title:"Departures & Consent Use",desc:"Building line relaxations, height, coverage and parking departures for architects and developers."},
+  {href:"/services/title-deed-restrictions/",num:"04",title:"Title Deed Restrictions",desc:"Remove outdated restrictive conditions and unlock your property's full development potential."},
+  {href:"/services/development-reports/",num:"05",title:"Development Reports",desc:"Comprehensive assessments of what your property can legally become — delivered in 5–7 days."},
+];
 ---
 
-<BaseLayout title="Expert Town Planners Cape Town — Rezoning, Subdivisions & Land Use" description="Professional town planning consultants in Cape Town. Rezoning, subdivisions, departures and land use applications across the Western Cape. Free consultation." schema={schema}>
-  
+<BaseLayout title="Expert Town Planners Cape Town — Rezoning, Subdivisions & Land Use" description="Professional town planning consultants. Rezoning, subdivisions, departures and land use applications for Somerset West, Stellenbosch and the Western Cape." schema={schema}>
+
   <!-- ═══════ HERO ═══════ -->
-  <section class="relative min-h-screen flex items-center overflow-hidden">
-    <div class="orb w-[800px] h-[800px] bg-accent/20 -top-40 -right-40"></div>
-    <div class="orb w-[500px] h-[500px] bg-accent/10 bottom-[20%] -left-[10%]"></div>
-    
-    <div class="wrap relative z-10 pt-32 pb-20">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <!-- Left: Text -->
-        <div>
-          <div class="flex flex-wrap gap-2 mb-8">
-            <span class="tag">⭐ 50+ Approved</span>
-            <span class="tag">📍 Western Cape</span>
-          </div>
-          <h1 class="text-text mb-6">
-            Expert<br /><span class="gradient-text">Town Planners</span><br />Cape Town
-          </h1>
-          <p class="text-text-secondary text-lg leading-relaxed max-w-lg mb-10">
-            Rezoning · Subdivisions · Land Use — guiding developers, architects 
-            and property investors through every municipal application across 
-            Somerset West, Stellenbosch and the Western Cape.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <a href="/contact/" class="btn-primary text-[15px] px-7 py-3.5">Get Your Free Consultation →</a>
-            <a href="/portfolio/" class="btn-outline text-[15px] px-7 py-3.5">View Portfolio</a>
-          </div>
-        </div>
-        <!-- Right: Visual element -->
-        <div class="hidden lg:block relative">
-          <div class="aspect-square rounded-3xl border border-border bg-card/50 overflow-hidden relative">
-            <!-- Decorative grid pattern -->
-            <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #D4A24E 1px, transparent 1px); background-size: 24px 24px;"></div>
-            <!-- Stats overlay -->
-            <div class="absolute inset-0 flex flex-col items-center justify-center p-12">
-              <div class="text-9xl font-black gradient-text mb-4">50+</div>
-              <p class="text-text-secondary text-sm tracking-wider uppercase">Projects Approved</p>
-              <div class="hr-accent my-6 mx-auto"></div>
-              <div class="grid grid-cols-2 gap-8 text-center">
-                <div><div class="text-3xl font-bold text-text">10+</div><p class="text-text-muted text-xs mt-1">Years</p></div>
-                <div><div class="text-3xl font-bold text-text">100%</div><p class="text-text-muted text-xs mt-1">Compliance</p></div>
-              </div>
-            </div>
-          </div>
+  <section class="min-h-[90vh] flex items-center">
+    <div class="wrap pt-32 pb-20">
+      <div class="max-w-3xl">
+        <p class="tag mb-8">Town Planning Consultants — Western Cape</p>
+        <h1 class="mb-8">Expert <span class="text-gold">Town Planners</span><br />Cape Town</h1>
+        <p class="text-ink-muted text-lg md:text-xl leading-relaxed max-w-xl mb-12">
+          Rezoning · Subdivisions · Land Use — guiding developers, architects 
+          and investors through every municipal application across Somerset West, 
+          Stellenbosch and the Western Cape.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact/" class="btn-primary text-base px-8 py-4">Get Your Free Consultation</a>
+          <a href="/portfolio/" class="btn-outline text-base px-8 py-4">View Our Work</a>
         </div>
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-bg to-transparent pointer-events-none"></div>
   </section>
 
-  <!-- ═══════ SERVICES BENTO ═══════ -->
-  <section class="section">
+  <!-- ═══════ SERVICES ═══════ -->
+  <section class="section bg-white">
     <div class="wrap">
-      <div class="mb-16">
-        <span class="tag mb-4">What We Do</span>
-        <h2 class="mt-4 mb-4">Town Planning<br /><span class="gradient-text">Services — Western Cape</span></h2>
-        <div class="hr-accent"></div>
-      </div>
+      <p class="tag mb-4">What We Do</p>
+      <h2 class="mb-4">Town Planning<br />Services</h2>
+      <div class="accent-line"></div>
 
-      <div class="grid md:grid-cols-3 gap-3">
-        <!-- Large card: Rezoning -->
-        <a href="/services/rezoning/" class="md:col-span-2 card-hover no-underline text-inherit group flex flex-col justify-between min-h-[280px]">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-xl">🏗️</div>
-              <span class="text-text-muted text-xs uppercase tracking-wider">Core Service</span>
+      <div class="mt-16 space-y-1">
+        {services.map(s => (
+          <a href={s.href} class="group flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-12 py-8 border-b border-stone hover:bg-cream-dark/50 transition-colors duration-200 no-underline px-4 -mx-4">
+            <span class="font-serif text-gold text-lg font-bold w-12 shrink-0">{s.num}</span>
+            <div class="flex-1">
+              <h3 class="font-serif text-xl group-hover:text-gold transition-colors">{s.title}</h3>
+              <p class="text-ink-muted text-[15px] mt-1">{s.desc}</p>
             </div>
-            <h3 class="text-2xl mb-3 group-hover:text-accent transition-colors">Rezoning & Land Use Applications</h3>
-            <p class="text-text-secondary text-sm leading-relaxed max-w-md">Full rezoning applications for Cape Town, Somerset West and Stellenbosch. From feasibility assessment to final municipal approval — we manage every step.</p>
-          </div>
-          <span class="text-accent text-sm font-medium mt-6 inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">Learn more →</span>
-        </a>
-
-        <!-- Small card: Subdivisions -->
-        <a href="/services/subdivisions/" class="card-hover no-underline text-inherit group">
-          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-xl mb-4">📐</div>
-          <h3 class="text-lg mb-2 group-hover:text-accent transition-colors">Subdivisions & Consolidations</h3>
-          <p class="text-text-secondary text-sm">Erf divisions, consolidations and sectional title schemes across the Western Cape.</p>
-        </a>
-
-        <!-- Departures -->
-        <a href="/services/departures/" class="card-hover no-underline text-inherit group">
-          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-xl mb-4">📋</div>
-          <h3 class="text-lg mb-2 group-hover:text-accent transition-colors">Departures & Consent Use</h3>
-          <p class="text-text-secondary text-sm">Building line relaxations, height, coverage and parking departures.</p>
-        </a>
-
-        <!-- Title Deed -->
-        <a href="/services/title-deed-restrictions/" class="card-hover no-underline text-inherit group">
-          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-xl mb-4">🔓</div>
-          <h3 class="text-lg mb-2 group-hover:text-accent transition-colors">Title Deed Restrictions</h3>
-          <p class="text-text-secondary text-sm">Remove outdated restrictive conditions and unlock development potential.</p>
-        </a>
-
-        <!-- Large card: Development Reports -->
-        <a href="/services/development-reports/" class="md:col-span-2 card-hover no-underline text-inherit group flex flex-col justify-between min-h-[200px]">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-xl">📊</div>
-              <span class="text-text-muted text-xs uppercase tracking-wider">Due Diligence</span>
-            </div>
-            <h3 class="text-2xl mb-3 group-hover:text-accent transition-colors">Development Potential Reports</h3>
-            <p class="text-text-secondary text-sm leading-relaxed max-w-lg">Know exactly what your property can legally become before you invest. Comprehensive reports delivered in 5–7 working days.</p>
-          </div>
-          <span class="text-accent text-sm font-medium mt-6 inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">Learn more →</span>
-        </a>
+            <span class="text-gold text-sm font-medium hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity">Learn more →</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ═══════ STATS BAR ═══════ -->
-  <div class="hr"></div>
-  <div class="wrap py-14">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div><div class="text-5xl font-black gradient-text mb-1">50+</div><p class="text-text-muted text-sm">Approved Applications</p></div>
-      <div><div class="text-5xl font-black gradient-text mb-1">10+</div><p class="text-text-muted text-sm">Years Experience</p></div>
-      <div><div class="text-5xl font-black gradient-text mb-1">5.0</div><p class="text-text-muted text-sm">Client Rating</p></div>
-      <div><div class="text-5xl font-black gradient-text mb-1">100%</div><p class="text-text-muted text-sm">Compliance Rate</p></div>
+  <!-- ═══════ STATS + TRUST ═══════ -->
+  <section class="bg-ink text-cream py-20">
+    <div class="wrap">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div><div class="num !text-gold">50+</div><p class="text-cream/50 text-sm mt-2">Approved Applications</p></div>
+        <div><div class="num !text-gold">10+</div><p class="text-cream/50 text-sm mt-2">Years Experience</p></div>
+        <div><div class="num !text-gold">5.0</div><p class="text-cream/50 text-sm mt-2">Client Rating</p></div>
+        <div><div class="num !text-gold">100%</div><p class="text-cream/50 text-sm mt-2">Compliance Rate</p></div>
+      </div>
     </div>
-  </div>
-  <div class="hr"></div>
+  </section>
 
   <!-- ═══════ LOCATIONS ═══════ -->
   <section class="section">
     <div class="wrap">
-      <div class="mb-16">
-        <span class="tag mb-4">Where We Work</span>
-        <h2 class="mt-4 mb-4">Trusted Across<br /><span class="gradient-text">The Western Cape</span></h2>
-        <div class="hr-accent"></div>
-      </div>
+      <p class="tag mb-4">Where We Work</p>
+      <h2 class="mb-4">Trusted Across<br />The Western Cape</h2>
+      <div class="accent-line"></div>
 
-      <div class="grid md:grid-cols-3 gap-3">
-        <a href="/areas/cape-town/" class="card-hover no-underline text-inherit group">
-          <h3 class="text-xl mb-3 group-hover:text-accent transition-colors">Cape Town</h3>
-          <p class="text-text-secondary text-sm leading-relaxed">City Bowl · Atlantic Seaboard · Southern & Northern Suburbs</p>
+      <div class="grid md:grid-cols-3 gap-6 mt-16">
+        <a href="/areas/cape-town/" class="card-accent no-underline text-inherit group">
+          <h3 class="font-serif text-xl mb-3 group-hover:text-gold transition-colors">Cape Town</h3>
+          <p class="text-ink-muted text-sm leading-relaxed">City Bowl · Atlantic Seaboard · Southern & Northern Suburbs</p>
         </a>
-        <a href="/areas/somerset-west/" class="card-hover no-underline text-inherit group">
-          <h3 class="text-xl mb-3 group-hover:text-accent transition-colors">Somerset West</h3>
-          <p class="text-text-secondary text-sm leading-relaxed">Helderberg Basin · Strand · Gordon's Bay</p>
+        <a href="/areas/somerset-west/" class="card-accent no-underline text-inherit group">
+          <h3 class="font-serif text-xl mb-3 group-hover:text-gold transition-colors">Somerset West</h3>
+          <p class="text-ink-muted text-sm leading-relaxed">Helderberg Basin · Strand · Gordon's Bay</p>
         </a>
-        <a href="/areas/stellenbosch/" class="card-hover no-underline text-inherit group">
-          <h3 class="text-xl mb-3 group-hover:text-accent transition-colors">Stellenbosch</h3>
-          <p class="text-text-secondary text-sm leading-relaxed">Heritage-sensitive planning · Cape Winelands</p>
+        <a href="/areas/stellenbosch/" class="card-accent no-underline text-inherit group">
+          <h3 class="font-serif text-xl mb-3 group-hover:text-gold transition-colors">Stellenbosch</h3>
+          <p class="text-ink-muted text-sm leading-relaxed">Heritage-sensitive planning · Cape Winelands</p>
         </a>
       </div>
     </div>
   </section>
 
   <!-- ═══════ TESTIMONIALS ═══════ -->
-  <section class="py-24 md:py-32 border-t border-border">
+  <section class="section bg-white">
     <div class="wrap">
-      <div class="mb-16">
-        <span class="tag mb-4">Testimonials</span>
-        <h2 class="mt-4">Trusted by Developers<br /><span class="gradient-text">& Property Professionals</span></h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-4">
+      <p class="tag mb-4">Testimonials</p>
+      <h2 class="mb-4">Trusted by Developers<br />& Property Professionals</h2>
+      <div class="accent-line"></div>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-16">
         <div class="card">
-          <div class="text-accent text-xs tracking-[0.3em] mb-5">★★★★★</div>
-          <p class="text-text-secondary leading-relaxed text-sm italic mb-6">"Navigated a complex rezoning for our Somerset West development that others said couldn't be done. Approved in 6 months."</p>
-          <p class="text-text text-sm font-semibold">Property Developer, Somerset West</p>
+          <p class="text-gold text-xs tracking-[0.3em] mb-6">★★★★★</p>
+          <p class="text-ink-light leading-relaxed text-sm italic mb-6">"Navigated a complex rezoning for our Somerset West development that others said couldn't be done. Approved in 6 months."</p>
+          <p class="text-ink text-sm font-semibold">Property Developer, Somerset West</p>
         </div>
         <div class="card">
-          <div class="text-accent text-xs tracking-[0.3em] mb-5">★★★★★</div>
-          <p class="text-text-secondary leading-relaxed text-sm italic mb-6">"As an architect, I rely on their departure applications. They understand design intent and consistently get results."</p>
-          <p class="text-text text-sm font-semibold">Architect, Cape Town</p>
+          <p class="text-gold text-xs tracking-[0.3em] mb-6">★★★★★</p>
+          <p class="text-ink-light leading-relaxed text-sm italic mb-6">"As an architect, I rely on their departure applications. They understand design intent and consistently get results."</p>
+          <p class="text-ink text-sm font-semibold">Architect, Cape Town</p>
         </div>
         <div class="card">
-          <div class="text-accent text-xs tracking-[0.3em] mb-5">★★★★★</div>
-          <p class="text-text-secondary leading-relaxed text-sm italic mb-6">"Their development report saved us from a bad investment and pointed us toward a property with 3× the upside."</p>
-          <p class="text-text text-sm font-semibold">Property Investor, Stellenbosch</p>
+          <p class="text-gold text-xs tracking-[0.3em] mb-6">★★★★★</p>
+          <p class="text-ink-light leading-relaxed text-sm italic mb-6">"Their development report saved us from a bad investment and pointed us toward a property with 3× the upside."</p>
+          <p class="text-ink text-sm font-semibold">Property Investor, Stellenbosch</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════ CTA ═══════ -->
-  <section class="relative overflow-hidden py-32 text-center">
-    <div class="orb w-[600px] h-[600px] bg-accent/15 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2"></div>
-    <div class="wrap relative z-10 max-w-xl mx-auto">
-      <h2 class="mb-6">Ready to Unlock Your<br /><span class="gradient-text">Property's Potential?</span></h2>
-      <p class="text-text-secondary text-lg mb-10">Free land use assessment — response within 24 hours.</p>
-      <a href="/contact/" class="btn-primary text-[15px] px-8 py-4">Request Your Free Consultation →</a>
+  <section class="py-32 md:py-40 text-center bg-cream-dark">
+    <div class="wrap-narrow">
+      <h2 class="mb-6">Ready to Unlock Your<br />Property's <span class="text-gold">Potential?</span></h2>
+      <p class="text-ink-muted text-lg mb-10">Free land use assessment — response within 24 hours.</p>
+      <a href="/contact/" class="btn-gold text-base px-10 py-4">Request Your Free Consultation</a>
     </div>
   </section>
 </BaseLayout>

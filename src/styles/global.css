@@ -1,78 +1,77 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @theme {
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --color-bg: #08080A;
-  --color-surface: #0F0F12;
-  --color-card: #141417;
-  --color-border: #1F1F24;
-  --color-border-light: #2A2A30;
-  --color-text: #F0F0F2;
-  --color-text-secondary: #9B9BA3;
-  --color-text-muted: #5C5C66;
-  --color-accent: #D4A24E;
-  --color-accent-light: #E8C580;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --color-cream: #F9F7F2;
+  --color-cream-dark: #F0ECE4;
+  --color-ink: #1A1814;
+  --color-ink-light: #3D3830;
+  --color-ink-muted: #6B655B;
+  --color-gold: #B8923E;
+  --color-gold-light: #D4B56C;
+  --color-gold-pale: #F5EDD6;
+  --color-stone: #E8E4DC;
+  --color-stone-dark: #D4CFC5;
 }
 
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body { @apply bg-bg text-text font-sans; }
+body { @apply bg-cream text-ink font-sans leading-relaxed; }
 
 /* Typography */
-h1 { @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.92] tracking-[-0.03em]; }
-h2 { @apply text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] tracking-[-0.02em]; }
-h3 { @apply text-lg sm:text-xl font-semibold leading-snug; }
+h1 { @apply font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-[-0.02em]; }
+h2 { @apply font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-[-0.01em]; }
+h3 { @apply font-serif text-xl sm:text-2xl font-semibold leading-snug; }
 
-.gradient-text {
-  @apply text-transparent bg-clip-text;
-  background-image: linear-gradient(135deg, #D4A24E 0%, #E8C580 50%, #D4A24E 100%);
-}
+/* Accent line */
+.accent-line { @apply w-16 h-px my-6; background: #B8923E; }
 
 /* Buttons */
 .btn {
-  @apply inline-flex items-center justify-center gap-2 font-semibold text-sm px-6 py-3 rounded-full
-         transition-all duration-300 active:scale-95 cursor-pointer;
+  @apply inline-flex items-center justify-center gap-2 font-sans font-semibold text-sm 
+         px-7 py-3.5 transition-all duration-300 active:scale-[0.97];
 }
-.btn-primary { @apply btn bg-accent text-bg hover:bg-accent-light; }
-.btn-outline { @apply btn border border-border hover:border-accent/40 text-text hover:text-accent; }
+.btn-primary { @apply btn bg-ink text-cream hover:bg-ink-light; }
+.btn-outline { @apply btn border-2 border-ink text-ink hover:bg-ink hover:text-cream; }
+.btn-gold { @apply btn bg-gold text-cream hover:bg-gold-light; }
 
 /* Layout */
-.wrap { @apply max-w-6xl mx-auto px-5 sm:px-8 lg:px-10; }
+.wrap { @apply max-w-6xl mx-auto px-6 sm:px-8 lg:px-10; }
+.wrap-narrow { @apply max-w-3xl mx-auto px-6 sm:px-8; }
 .section { @apply py-24 md:py-32; }
+.section-sm { @apply py-16 md:py-24; }
 
 /* Cards */
-.card { @apply bg-card border border-border rounded-2xl p-6 md:p-8; }
-.card-hover { @apply card hover:border-border-light hover:bg-[#18181C] transition-all duration-300; }
+.card {
+  @apply bg-white border border-stone rounded-none p-8
+         hover:border-gold/40 hover:shadow-[0_4px_24px_rgba(0,0,0,0.04)]
+         transition-all duration-300;
+}
+.card-accent {
+  @apply card border-l-2 border-l-gold;
+}
 
-/* Glow orb */
-.orb { @apply absolute rounded-full blur-[100px] pointer-events-none opacity-30; }
-
-/* Dividers */
-.hr { @apply w-full h-px bg-border; }
-.hr-accent { @apply w-16 h-0.5 rounded-full; background: linear-gradient(90deg, #D4A24E, transparent); }
+/* Tags */
+.tag { @apply inline-block px-3 py-1 text-xs font-medium uppercase tracking-wider text-gold bg-gold-pale; }
 
 /* Form */
 .form-input {
-  @apply w-full bg-surface border border-border rounded-xl px-4 py-3 text-text text-[15px]
-         placeholder:text-text-muted focus:outline-none focus:ring-1 focus:ring-accent/40
-         focus:border-accent/40 transition-all duration-200;
+  @apply w-full bg-white border border-stone rounded-none px-4 py-3 text-ink text-[15px]
+         placeholder:text-ink-muted focus:outline-none focus:border-ink transition-colors duration-200;
 }
-.form-label { @apply block text-sm font-medium text-text-secondary mb-1.5; }
-
-/* Tag */
-.tag { @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20; }
-
-/* Site footer */
-.site-footer { @apply border-t border-border py-16; }
-.site-footer h4 { @apply text-text text-sm font-semibold mb-5; }
-.site-footer a { @apply text-text-muted hover:text-text transition-colors text-sm; }
+.form-label { @apply block text-sm font-semibold text-ink-light mb-1.5; }
 
 /* Nav */
-.site-nav { @apply fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-xl border-b border-border/50; }
-.nav-link { @apply text-text-secondary hover:text-text transition-colors text-sm font-medium; }
-.nav-dd {
-  @apply absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-xl
-         shadow-[0_16px_48px_rgba(0,0,0,0.5)] opacity-0 invisible
-         group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2;
+.site-nav {
+  @apply fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-lg border-b border-stone transition-all duration-300;
 }
-.nav-dd a { @apply block px-5 py-2.5 text-sm text-text-secondary hover:bg-surface hover:text-text transition-colors; }
+.nav-link { @apply text-ink-muted hover:text-ink transition-colors text-sm font-medium; }
+
+/* Footer */
+.site-footer { @apply bg-ink text-cream/60 py-16; }
+.site-footer h4 { @apply text-cream text-sm font-semibold mb-5; }
+.site-footer a { @apply text-cream/50 hover:text-gold-light transition-colors text-sm; }
+
+/* Number */
+.num { @apply font-serif text-5xl md:text-6xl font-bold text-gold; }

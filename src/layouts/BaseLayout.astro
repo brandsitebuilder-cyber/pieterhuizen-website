@@ -15,30 +15,47 @@ const { title, description, schema } = Astro.props;
 </head>
 <body>
   <nav class="site-nav">
-    <div class="wrap flex items-center justify-between py-4">
-      <a href="/" class="flex items-center gap-3 no-underline">
-        <div class="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black text-bg bg-accent">P</div>
-        <span class="text-text font-bold text-[15px] tracking-tight">Pieterhuizen<span class="text-accent">Planning</span></span>
+    <div class="wrap flex items-center justify-between py-5">
+      <a href="/" class="no-underline flex items-baseline gap-1">
+        <span class="font-serif text-2xl font-bold text-ink tracking-tight">Pieterhuizen</span>
+        <span class="font-sans text-sm text-gold font-medium tracking-[0.2em] uppercase">Planning</span>
       </a>
-      <div class="hidden lg:flex items-center gap-1">
-        <a href="/" class="nav-link px-3 py-2">Home</a>
-        <a href="/about/" class="nav-link px-3 py-2">About</a>
-        <div class="relative group px-1"><span class="nav-link px-3 py-2 cursor-pointer inline-flex items-center gap-1">Services ▾</span><div class="nav-dd"><a href="/services/rezoning/">Rezoning</a><a href="/services/subdivisions/">Subdivisions</a><a href="/services/departures/">Departures</a><a href="/services/title-deed-restrictions/">Title Deed Restrictions</a><a href="/services/development-reports/">Development Reports</a></div></div>
-        <div class="relative group px-1"><span class="nav-link px-3 py-2 cursor-pointer inline-flex items-center gap-1">Areas ▾</span><div class="nav-dd"><a href="/areas/cape-town/">Cape Town</a><a href="/areas/somerset-west/">Somerset West</a><a href="/areas/stellenbosch/">Stellenbosch</a><a href="/areas/helderberg/">Helderberg Basin</a></div></div>
-        <a href="/portfolio/" class="nav-link px-3 py-2">Portfolio</a>
-        <a href="/contact/" class="btn-primary !py-2 !px-4 !text-xs ml-3">Consultation</a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="/portfolio/" class="nav-link">Portfolio</a>
+        <div class="relative group">
+          <span class="nav-link cursor-pointer">Services ▾</span>
+          <div class="absolute top-full left-0 mt-3 w-56 bg-white border border-stone shadow-[0_12px_40px_rgba(0,0,0,0.08)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-3">
+            <a href="/services/rezoning/" class="block px-5 py-2 text-sm text-ink-muted hover:text-ink hover:bg-cream-dark transition-colors">Rezoning</a>
+            <a href="/services/subdivisions/" class="block px-5 py-2 text-sm text-ink-muted hover:text-ink hover:bg-cream-dark transition-colors">Subdivisions</a>
+            <a href="/services/departures/" class="block px-5 py-2 text-sm text-ink-muted hover:text-ink hover:bg-cream-dark transition-colors">Departures</a>
+            <a href="/services/title-deed-restrictions/" class="block px-5 py-2 text-sm text-ink-muted hover:text-ink hover:bg-cream-dark transition-colors">Title Deed</a>
+            <a href="/services/development-reports/" class="block px-5 py-2 text-sm text-ink-muted hover:text-ink hover:bg-cream-dark transition-colors">Dev Reports</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <span class="nav-link cursor-pointer">Areas ▾</span>
+          <div class="absolute top-full left-0 mt-3 w-48 bg-white border border-stone shadow-[0_12px_40px_rgba(0,0,0,0.08)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-3">
+            <a href="/areas/cape-town/" class="block px-5 py-2 text-sm text-ink-muted hover:text-ink hover:bg-cream-dark transition-colors">Cape Town</a>
+            <a href="/areas/somerset-west/" class="block px-5 py-2 text-sm text-ink-muted hover:text-ink hover:bg-cream-dark transition-colors">Somerset West</a>
+            <a href="/areas/stellenbosch/" class="block px-5 py-2 text-sm text-ink-muted hover:text-ink hover:bg-cream-dark transition-colors">Stellenbosch</a>
+            <a href="/areas/helderberg/" class="block px-5 py-2 text-sm text-ink-muted hover:text-ink hover:bg-cream-dark transition-colors">Helderberg</a>
+          </div>
+        </div>
+        <a href="/contact/" class="btn-primary !py-2.5 !px-5 !text-xs">Free Consultation</a>
       </div>
-      <button class="lg:hidden p-2 text-text-secondary" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <button class="lg:hidden p-2 text-ink" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
   </nav>
   <main><slot /></main>
   <footer class="site-footer" itemscope itemtype="https://schema.org/LocalBusiness">
     <meta itemprop="name" content="Pieterhuizen Planning"><meta itemprop="description" content="Town Planning Consultants Cape Town">
     <div class="wrap"><div class="grid md:grid-cols-3 gap-12">
-      <div><h4>📍 Cape Town Office</h4><div class="space-y-1.5 text-text-muted text-sm" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><p><span itemprop="addressLocality">Cape Town</span>, <span itemprop="addressRegion">Western Cape</span></p><p>📞 <a href="tel:+27218523456" itemprop="telephone">021 852 3456</a></p><p>📧 <a href="mailto:info@pieterhuizen.co.za" itemprop="email">info@pieterhuizen.co.za</a></p></div></div>
-      <div><h4>🗺️ Areas Served</h4><ul class="space-y-1.5"><li><a href="/areas/cape-town/">Cape Town</a></li><li><a href="/areas/somerset-west/">Somerset West</a></li><li><a href="/areas/stellenbosch/">Stellenbosch</a></li><li><a href="/areas/helderberg/">Helderberg Basin</a></li><li><a href="/areas/western-cape/">Western Cape</a></li></ul></div>
+      <div><h4>📍 Cape Town Office</h4><div class="space-y-1.5 text-sm" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><p><span itemprop="addressLocality">Cape Town</span>, <span itemprop="addressRegion">Western Cape</span></p><p>📞 <a href="tel:+27218523456" itemprop="telephone">021 852 3456</a></p><p>📧 <a href="mailto:info@pieterhuizen.co.za" itemprop="email">info@pieterhuizen.co.za</a></p></div></div>
+      <div><h4>🗺️ Areas Served</h4><ul class="space-y-1.5"><li><a href="/areas/cape-town/">Cape Town</a></li><li><a href="/areas/somerset-west/">Somerset West</a></li><li><a href="/areas/stellenbosch/">Stellenbosch</a></li><li><a href="/areas/helderberg/">Helderberg Basin</a></li></ul></div>
       <div><h4>📋 Quick Links</h4><ul class="space-y-1.5"><li><a href="/services/rezoning/">Rezoning</a></li><li><a href="/services/subdivisions/">Subdivisions</a></li><li><a href="/services/departures/">Departures</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/contact/">Free Consultation</a></li></ul></div>
-    </div><div class="mt-12 pt-8 border-t border-border text-center text-xs text-text-muted">&copy; {new Date().getFullYear()} Pieterhuizen Planning. Expert Town Planners Cape Town.</div></div>
+    </div><div class="mt-12 pt-8 border-t border-cream/10 text-center text-xs text-cream/30">&copy; {new Date().getFullYear()} Pieterhuizen Planning.</div></div>
   </footer>
 </body>
 </html>
