@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const schema = {"@context":"https://schema.org","@type":"Service","name":"Rezoning Applications","provider":{"@type":"LocalBusiness","name":"Pieterhuizen Planning"},"areaServed":["Cape Town","Somerset West","Stellenbosch","Helderberg"]};
+---
+<BaseLayout title="Rezoning — Town Planners Cape Town" description="Professional rezoning applications for Cape Town, Somerset West, Stellenbosch and the Helderberg Basin. Town planning consultants." schema={schema}>
+<section class="min-h-[50vh] flex items-center"><div class="wrap pt-28 pb-16"><span class="tag mb-10">Services · Rezoning</span><h1 class="mb-6">Rezoning <span class="text-accent">applications</span></h1><p class="text-text-muted text-lg leading-relaxed max-w-lg">Change what your property is legally permitted to do. More density, different use, higher value.</p></div></section>
+
+<div class="wrap pb-24"><div class="grid md:grid-cols-3 gap-px bg-border-subtle">
+<div class="bg-bg p-8"><div class="text-4xl mb-5">1</div><h3 class="mb-2">Feasibility study</h3><p class="text-text-muted text-sm">We review zoning scheme, spatial development frameworks and precedent to confirm viability.</p></div>
+<div class="bg-bg p-8"><div class="text-4xl mb-5">2</div><h3 class="mb-2">Application</h3><p class="text-text-muted text-sm">Full motivation report, site development plan, and all supporting documentation prepared.</p></div>
+<div class="bg-bg p-8"><div class="text-4xl mb-5">3</div><h3 class="mb-2">Council process</h3><p class="text-text-muted text-sm">We manage the entire municipal process — submissions, objections, appeals — until approval.</p></div>
+</div></div>
+
+<div class="border-t border-border-subtle py-24"><div class="wrap"><h2 class="mb-10">Who it's <span class="text-accent">for</span></h2><div class="grid md:grid-cols-2 gap-px bg-border-subtle">
+<div class="bg-bg p-8"><h3 class="mb-2">Property developers</h3><p class="text-text-muted text-sm">Maximise yield — rezone for increased density, mixed-use, or commercial redevelopment.</p></div>
+<div class="bg-bg p-8"><h3 class="mb-2">Property investors</h3><p class="text-text-muted text-sm">Buy undervalued property and unlock its potential through rezoning. Turn R1M into R3M.</p></div>
+<div class="bg-bg p-8"><h3 class="mb-2">Property owners</h3><p class="text-text-muted text-sm">Running a business from home? Need granny flat rights? Rezone to match actual use.</p></div>
+<div class="bg-bg p-8"><h3 class="mb-2">Architects & surveyors</h3><p class="text-text-muted text-sm">Your design needs the right land use rights. We handle the planning so you can build.</p></div>
+</div></div></div>
+
+<section class="py-32 text-center border-t border-border-subtle"><div class="narrow"><h2 class="mb-6">Check your property's <span class="text-accent">potential</span></h2><p class="text-text-muted text-lg mb-10">Free assessment. We'll tell you what's possible and what it'll take.</p><a href="/contact/" class="btn-primary text-base px-8 py-4">Get Your Free Consultation</a></div></section>
+</BaseLayout>

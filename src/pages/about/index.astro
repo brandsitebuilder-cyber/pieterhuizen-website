@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const schema = {"@context":"https://schema.org","@type":"AboutPage","name":"About Pieterhuizen Planning"};
+---
+<BaseLayout title="About — Town Planners Cape Town" description="Established town planning consultancy serving the Western Cape — rezoning, subdivisions, land use applications." schema={schema}>
+<section class="min-h-[60vh] flex items-center"><div class="wrap pt-28 pb-16"><div class="max-w-3xl"><span class="tag mb-10">About</span><h1 class="mb-6">Town planning is<br /><span class="text-accent">what we do</span></h1><p class="text-text-muted text-lg leading-relaxed max-w-lg mb-8">Professional land use consultants based in Somerset West, serving the entire Western Cape region.</p></div></div></section>
+
+<div class="wrap pb-24"><div class="grid md:grid-cols-3 gap-px bg-border-subtle">
+<div class="bg-bg p-8 md:p-10"><div class="text-4xl mb-5">📋</div><h3 class="mb-2">Assess</h3><p class="text-text-muted text-sm">Every project starts with understanding your property's current zoning, its constraints, and its untapped potential.</p></div>
+<div class="bg-bg p-8 md:p-10"><div class="text-4xl mb-5">📐</div><h3 class="mb-2">Strategize</h3><p class="text-text-muted text-sm">We map the fastest path to approval — navigating SPLUMA, municipal bylaws, and heritage regulations.</p></div>
+<div class="bg-bg p-8 md:p-10"><div class="text-4xl mb-5">✅</div><h3 class="mb-2">Deliver</h3><p class="text-text-muted text-sm">Motivation reports, site development plans, and council liaison — until your approval comes through.</p></div>
+</div></div>
+
+<div class="border-t border-border-subtle py-24"><div class="wrap"><h2 class="mb-10">Our <span class="text-accent">values</span></h2><div class="grid md:grid-cols-3 gap-px bg-border-subtle">
+<div class="bg-bg p-8"><h3 class="mb-2">Experience</h3><p class="text-text-muted text-sm">10+ years navigating Western Cape municipal planning systems. We know which applications succeed — and how to frame them.</p></div>
+<div class="bg-bg p-8"><h3 class="mb-2">Reliability</h3><p class="text-text-muted text-sm">Clear timelines, regular updates, and no surprises. Developers, architects and investors trust us to deliver.</p></div>
+<div class="bg-bg p-8"><h3 class="mb-2">Results</h3><p class="text-text-muted text-sm">50+ approved applications across Cape Town, Stellenbosch, Somerset West and the Helderberg Basin.</p></div>
+</div></div></div>
+
+<section class="py-32 text-center border-t border-border-subtle"><div class="narrow"><h2 class="mb-6">Work with <span class="text-accent">us</span></h2><p class="text-text-muted text-lg mb-10">Free land use assessment. Response within 24 hours.</p><a href="/contact/" class="btn-primary text-base px-8 py-4">Get Your Free Consultation</a></div></section>
+</BaseLayout>

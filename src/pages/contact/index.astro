@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const schema = {"@context":"https://schema.org","@type":"ContactPage"};
+---
+<BaseLayout title="Contact — Free Land Use Assessment" description="Free consultation for rezoning, subdivisions and land use. Town planners Cape Town." schema={schema}>
+<section class="min-h-[60vh] flex items-center"><div class="wrap pt-28 pb-16"><div class="max-w-3xl"><span class="tag mb-10">Contact</span><h1 class="mb-6">Let's <span class="text-accent">talk</span></h1><p class="text-text-muted text-lg leading-relaxed max-w-lg">Free land use assessment. We'll review your property and outline the path forward — no obligation.</p></div></div></section>
+
+<div class="wrap pb-24"><div class="grid md:grid-cols-2 gap-px bg-border-subtle">
+<div class="bg-bg p-8 md:p-10">
+<h3 class="mb-6">Send a message</h3>
+<form class="space-y-5"><div><label class="form-label">Name</label><input class="form-input" type="text" placeholder="Your name"></div><div><label class="form-label">Email</label><input class="form-input" type="email" placeholder="you@email.com"></div><div><label class="form-label">Phone</label><input class="form-input" type="tel" placeholder="Your phone number"></div><div><label class="form-label">Tell us about your property</label><textarea class="form-input" rows="4" placeholder="Briefly describe your property and what you'd like to achieve..."></textarea></div><button type="submit" class="btn-primary w-full justify-center">Send Message</button></form>
+</div>
+<div class="bg-bg p-8 md:p-10">
+<h3 class="mb-6">Contact details</h3>
+<div class="space-y-6 text-text-secondary">
+<div><p class="text-xs text-text-muted mb-1">Phone</p><p class="text-text"><a href="tel:+2721*****456" class="hover:text-accent transition-colors">021 852 3456</a></p></div>
+<div><p class="text-xs text-text-muted mb-1">Email</p><p class="text-text"><a href="mailto:info@pieterhuizen.co.za" class="hover:text-accent transition-colors">info@pieterhuizen.co.za</a></p></div>
+<div><p class="text-xs text-text-muted mb-1">Location</p><p>Somerset West<br />Western Cape</p></div>
+<div><p class="text-xs text-text-muted mb-1">Hours</p><p>Mon–Fri · 8:00–17:00</p></div>
+</div>
+</div>
+</div></div>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const apps = [
+  {name:"188 Beach Road, Strand",type:"Rezoning"},
+  {name:"60 Station Road, Kelderhof Estate",type:"Subdivision"},
+  {name:"42 Bethanie Road, Durbanville",type:"Departure"},
+  {name:"11 Piet Retief Street, Stellenbosch",type:"Consent Use"},
+  {name:"6 Devon Street, Woodstock",type:"Rezoning"},
+  {name:"203 8th Street, Voëlklip",type:"Departure"},
+  {name:"6 Buitekring Street, Stellenbosch",type:"Subdivision"},
+  {name:"2 Laetitia Street, Stellenbosch",type:"Rezoning"},
+  {name:"54 Oyster Drive, Boggomsbaai",type:"Departure"},
+  {name:"8 Uitsig Street, Stellenbosch",type:"Subdivision"},
+  {name:"13 Piet Retief Street, Stellenbosch",type:"Consent Use"},
+  {name:"99 Beach Road, Strand",type:"Rezoning"},
+  {name:"3 Uitkyk Street, Franschhoek",type:"Departure"},
+  {name:"3 Keurboom Avenue, Somerset West",type:"Subdivision"},
+];
+const current = [
+  {name:"ERF 5236 Strand — 188 Beach Road",desc:"Rezoning application"},
+  {name:"ERF 875 Stellenbosch — 11 Piet Retief Street",desc:"Consent use application"},
+  {name:"ERF 4769 Stellenbosch — 8 Uitsig Street",desc:"Subdivision application"},
+];
+---
+<BaseLayout title="Portfolio — Town Planning Projects" description="Approved and current town planning applications across the Western Cape — rezoning, subdivisions, departures.">
+<section class="min-h-[50vh] flex items-center"><div class="wrap pt-28 pb-16"><span class="tag mb-10">Portfolio</span><h1 class="mb-6">Approved <span class="text-accent">projects</span></h1><p class="text-text-muted text-lg leading-relaxed max-w-lg">50+ successful applications across Cape Town, Stellenbosch, Somerset West and the Helderberg.</p></div></section>
+
+<div class="wrap pb-24"><div class="grid md:grid-cols-3 gap-px bg-border-subtle">
+{apps.map(a => <div class="bg-bg p-8"><p class="text-accent text-xs tracking-[0.3em] mb-3">{a.type}</p><h3 class="mb-1 !text-base">{a.name}</h3><p class="text-text-muted text-xs">Approved</p></div>)}
+</div></div>
+
+<div class="border-t border-border-subtle py-24"><div class="wrap">
+<h2 class="mb-10">In <span class="text-accent">progress</span></h2>
+<div class="grid md:grid-cols-3 gap-px bg-border-subtle">
+{current.map(c => <div class="bg-bg p-8"><p class="text-accent text-xs tracking-[0.3em] mb-3">Active</p><h3 class="mb-1 !text-base">{c.name}</h3><p class="text-text-muted text-xs">{c.desc}</p></div>)}
+</div></div></div>
+
+<section class="py-32 text-center border-t border-border-subtle"><div class="narrow"><h2 class="mb-6">Ready to <span class="text-accent">start</span>?</h2><p class="text-text-muted text-lg mb-10">Free land use assessment for your property.</p><a href="/contact/" class="btn-primary text-base px-8 py-4">Get Your Free Consultation</a></div></section>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const services = [
+  {name:"Rezoning",href:"/services/rezoning/",icon:"🏗️",desc:"Change the use rights of a property. Applications for all Western Cape municipalities."},
+  {name:"Subdivisions",href:"/services/subdivisions/",icon:"📐",desc:"Divide land into multiple erven. Consolidations and sectional title schemes."},
+  {name:"Departures",href:"/services/departures/",icon:"📋",desc:"Relaxations on building lines, height, coverage, and parking requirements."},
+  {name:"Title Deed Restrictions",href:"/services/title-deed-restrictions/",icon:"🔓",desc:"Remove restrictive conditions from your title deed. Unlock development potential."},
+  {name:"Development Reports",href:"/services/development-reports/",icon:"📊",desc:"Know what your property can become. Zoning compliance and development potential."},
+  {name:"Consolidation",href:"/services/consolidation/",icon:"🧩",desc:"Combine multiple erven into a single property. Streamline development across stands."},
+  {name:"Consent Use",href:"/services/consent-use/",icon:"✋",desc:"Apply for a use not normally permitted in a zone. Secondary rights on a property."},
+  {name:"Removal of Conditions",href:"/services/removal-conditions/",icon:"🗑️",desc:"Remove outdated conditions of approval attached to previous applications."},
+  {name:"Zoning Compliance",href:"/services/zoning-compliance/",icon:"✓",desc:"Verify lawful use. Essential for business licenses, property transfers and liquor licences."},
+  {name:"Property Development",href:"/services/property-development/",icon:"🏘️",desc:"Full development potential reports. Building envelope, density, and use analysis."},
+  {name:"Property Ownership",href:"/services/property-ownership/",icon:"🏠",desc:"Understand property rights, servitudes, and ownership structures."},
+];
+---
+<BaseLayout title="Town Planning Services — Rezoning, Subdivisions & Land Use" description="Complete town planning services: rezoning, subdivision, departure, consent use, title deed removal, zoning compliance and development reports.">
+<section class="min-h-[50vh] flex items-center"><div class="wrap pt-28 pb-16"><span class="tag mb-10">Services</span><h1 class="mb-6">Town planning <span class="text-accent">services</span></h1><p class="text-text-muted text-lg leading-relaxed max-w-lg">Every service needed to take a property from constrained to approved. We handle the full application process.</p></div></section>
+
+<div class="wrap pb-24"><div class="grid md:grid-cols-3 gap-px bg-border-subtle">
+{services.map(s => <a href={s.href} class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group"><div class="text-4xl mb-5">{s.icon}</div><h3 class="mb-2 group-hover:text-accent transition-colors">{s.name}</h3><p class="text-text-muted text-sm">{s.desc}</p></a>)}
+</div></div>
+
+<section class="py-32 text-center border-t border-border-subtle"><div class="narrow"><h2 class="mb-6">Not sure what you <span class="text-accent">need</span>?</h2><p class="text-text-muted text-lg mb-10">Free land use assessment. We'll identify the right application for your property.</p><a href="/contact/" class="btn-primary text-base px-8 py-4">Get Your Free Consultation</a></div></section>
+</BaseLayout>

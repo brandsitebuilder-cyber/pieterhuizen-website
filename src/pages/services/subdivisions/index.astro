@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const schema = {"@context":"https://schema.org","@type":"Service","name":"Subdivisions","provider":{"@type":"LocalBusiness","name":"Pieterhuizen Planning"}};
+---
+<BaseLayout title="Subdivisions — Town Planners Western Cape" description="Subdivision and consolidation applications. Divide land into multiple erven or combine properties. Town planners Cape Town." schema={schema}>
+<section class="min-h-[50vh] flex items-center"><div class="wrap pt-28 pb-16"><span class="tag mb-10">Services · Subdivisions</span><h1 class="mb-6">Subdivision <span class="text-accent">applications</span></h1><p class="text-text-muted text-lg leading-relaxed max-w-lg">Divide land into multiple erven. Consolidation, sectional title schemes, and erf boundary adjustments.</p></div></section>
+
+<div class="wrap pb-24"><div class="grid md:grid-cols-3 gap-px bg-border-subtle">
+<div class="bg-bg p-8"><div class="text-4xl mb-5">1</div><h3 class="mb-2">Assessment</h3><p class="text-text-muted text-sm">Minimum erf size, zoning constraints, access requirements — we check everything before you commit.</p></div>
+<div class="bg-bg p-8"><div class="text-4xl mb-5">2</div><h3 class="mb-2">Survey & plan</h3><p class="text-text-muted text-sm">Subdivision diagram prepared with registered land surveyor. Site development plan.</p></div>
+<div class="bg-bg p-8"><div class="text-4xl mb-5">3</div><h3 class="mb-2">Approval</h3><p class="text-text-muted text-sm">Full municipal application managed end-to-end — from submission to conditions clearance.</p></div>
+</div></div>
+
+<div class="border-t border-border-subtle py-24"><div class="wrap"><h2 class="mb-10">Types of <span class="text-accent">subdivisions</span></h2><div class="grid md:grid-cols-2 gap-px bg-border-subtle">
+<div class="bg-bg p-8"><h3 class="mb-2">Residential subdivisions</h3><p class="text-text-muted text-sm">Split a large erf into multiple residential stands. Maximise land value.</p></div>
+<div class="bg-bg p-8"><h3 class="mb-2">Sectional title schemes</h3><p class="text-text-muted text-sm">Create sectional title units — apartments, townhouses, and mixed-use developments.</p></div>
+<div class="bg-bg p-8"><h3 class="mb-2">Consolidations</h3><p class="text-text-muted text-sm">Combine adjacent erven into a single property. Simplify ownership or enable larger development.</p></div>
+<div class="bg-bg p-8"><h3 class="mb-2">Boundary adjustments</h3><p class="text-text-muted text-sm">Shift erf boundaries between adjacent properties — no new erven created.</p></div>
+</div></div></div>
+
+<section class="py-32 text-center border-t border-border-subtle"><div class="narrow"><h2 class="mb-6">Start your <span class="text-accent">subdivision</span></h2><p class="text-text-muted text-lg mb-10">Free assessment. We'll tell you how many stands you can create.</p><a href="/contact/" class="btn-primary text-base px-8 py-4">Get Your Free Consultation</a></div></section>
+</BaseLayout>
