@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pieterhuizen.co.za/sitemap-index.xml

@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-bg: #08080A;
+  --color-surface: #0F0F12;
+  --color-card: #141417;
+  --color-border: #1F1F24;
+  --color-border-light: #2A2A30;
+  --color-text: #F0F0F2;
+  --color-text-secondary: #9B9BA3;
+  --color-text-muted: #5C5C66;
+  --color-accent: #D4A24E;
+  --color-accent-light: #E8C580;
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { @apply bg-bg text-text font-sans; }
+
+/* Typography */
+h1 { @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.92] tracking-[-0.03em]; }
+h2 { @apply text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] tracking-[-0.02em]; }
+h3 { @apply text-lg sm:text-xl font-semibold leading-snug; }
+
+.gradient-text {
+  @apply text-transparent bg-clip-text;
+  background-image: linear-gradient(135deg, #D4A24E 0%, #E8C580 50%, #D4A24E 100%);
+}
+
+/* Buttons */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 font-semibold text-sm px-6 py-3 rounded-full
+         transition-all duration-300 active:scale-95 cursor-pointer;
+}
+.btn-primary { @apply btn bg-accent text-bg hover:bg-accent-light; }
+.btn-outline { @apply btn border border-border hover:border-accent/40 text-text hover:text-accent; }
+
+/* Layout */
+.wrap { @apply max-w-6xl mx-auto px-5 sm:px-8 lg:px-10; }
+.section { @apply py-24 md:py-32; }
+
+/* Cards */
+.card { @apply bg-card border border-border rounded-2xl p-6 md:p-8; }
+.card-hover { @apply card hover:border-border-light hover:bg-[#18181C] transition-all duration-300; }
+
+/* Glow orb */
+.orb { @apply absolute rounded-full blur-[100px] pointer-events-none opacity-30; }
+
+/* Dividers */
+.hr { @apply w-full h-px bg-border; }
+.hr-accent { @apply w-16 h-0.5 rounded-full; background: linear-gradient(90deg, #D4A24E, transparent); }
+
+/* Form */
+.form-input {
+  @apply w-full bg-surface border border-border rounded-xl px-4 py-3 text-text text-[15px]
+         placeholder:text-text-muted focus:outline-none focus:ring-1 focus:ring-accent/40
+         focus:border-accent/40 transition-all duration-200;
+}
+.form-label { @apply block text-sm font-medium text-text-secondary mb-1.5; }
+
+/* Tag */
+.tag { @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20; }
+
+/* Site footer */
+.site-footer { @apply border-t border-border py-16; }
+.site-footer h4 { @apply text-text text-sm font-semibold mb-5; }
+.site-footer a { @apply text-text-muted hover:text-text transition-colors text-sm; }
+
+/* Nav */
+.site-nav { @apply fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-xl border-b border-border/50; }
+.nav-link { @apply text-text-secondary hover:text-text transition-colors text-sm font-medium; }
+.nav-dd {
+  @apply absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-xl
+         shadow-[0_16px_48px_rgba(0,0,0,0.5)] opacity-0 invisible
+         group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2;
+}
+.nav-dd a { @apply block px-5 py-2.5 text-sm text-text-secondary hover:bg-surface hover:text-text transition-colors; }
