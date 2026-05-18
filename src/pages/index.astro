@@ -5,7 +5,7 @@ const schema = {"@context":"https://schema.org","@type":"LocalBusiness","name":"
 <BaseLayout title="Town Planners Cape Town — Rezoning, Subdivisions & Land Use" description="Professional town planning consultants. Rezoning, subdivisions and land use applications across the Western Cape." schema={schema}>
 
   <!-- ═══ HERO ═══ -->
-  <section class="min-h-screen flex items-center">
+  <section class="min-h-[90vh] flex items-center bg-gradient-to-b from-[#F5F7FA] to-white">
     <div class="wrap pt-28 pb-20">
       <div class="max-w-3xl anim">
         <span class="tag mb-10">Western Cape · Town Planning</span>
@@ -20,13 +20,13 @@ const schema = {"@context":"https://schema.org","@type":"LocalBusiness","name":"
   </section>
 
   <!-- ═══ STATS ═══ -->
-  <div class="border-y border-border-subtle">
+  <div class="border-y border-border-subtle bg-surface">
     <div class="wrap py-12">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div><div class="text-4xl font-semibold text-accent tracking-tight">50+</div><div class="text-text-muted text-xs mt-1">Projects</div></div>
-        <div><div class="text-4xl font-semibold text-accent tracking-tight">10+</div><div class="text-text-muted text-xs mt-1">Years</div></div>
-        <div><div class="text-4xl font-semibold text-accent tracking-tight">5.0</div><div class="text-text-muted text-xs mt-1">Rating</div></div>
-        <div><div class="text-4xl font-semibold text-accent tracking-tight">100%</div><div class="text-text-muted text-xs mt-1">Compliance</div></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div><div class="text-4xl font-semibold text-accent tracking-tight">50+</div><div class="text-text-muted text-sm mt-1">Projects Approved</div></div>
+        <div><div class="text-4xl font-semibold text-accent tracking-tight">10+</div><div class="text-text-muted text-sm mt-1">Years Experience</div></div>
+        <div><div class="text-4xl font-semibold text-accent tracking-tight">5.0</div><div class="text-text-muted text-sm mt-1">Google Rating</div></div>
+        <div><div class="text-4xl font-semibold text-accent tracking-tight">100%</div><div class="text-text-muted text-sm mt-1">Compliance</div></div>
       </div>
     </div>
   </div>
@@ -35,53 +35,55 @@ const schema = {"@context":"https://schema.org","@type":"LocalBusiness","name":"
   <section class="py-24 md:py-32">
     <div class="wrap">
       <span class="tag mb-8">Services</span>
+      <h2 class="mb-16">Town Planning <span class="text-accent">Services</span></h2>
       <div class="grid md:grid-cols-3 gap-px bg-border-subtle">
-        <a href="/services/rezoning/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+        <a href="/services/rezoning/" class="bg-white border border-border-subtle p-8 md:p-10 hover:border-accent hover:shadow-sm transition-all no-underline text-inherit group">
           <div class="text-4xl mb-5">🏗️</div>
           <h3 class="mb-2 group-hover:text-accent transition-colors">Rezoning</h3>
           <p class="text-text-muted text-sm">Applications for Cape Town, Somerset West and Stellenbosch.</p>
         </a>
-        <a href="/services/subdivisions/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+        <a href="/services/subdivisions/" class="bg-white border border-border-subtle p-8 md:p-10 hover:border-accent hover:shadow-sm transition-all no-underline text-inherit group">
           <div class="text-4xl mb-5">📐</div>
           <h3 class="mb-2 group-hover:text-accent transition-colors">Subdivisions</h3>
           <p class="text-text-muted text-sm">Erf divisions, consolidations and sectional title schemes.</p>
         </a>
-        <a href="/services/departures/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+        <a href="/services/departures/" class="bg-white border border-border-subtle p-8 md:p-10 hover:border-accent hover:shadow-sm transition-all no-underline text-inherit group">
           <div class="text-4xl mb-5">📋</div>
           <h3 class="mb-2 group-hover:text-accent transition-colors">Departures</h3>
           <p class="text-text-muted text-sm">Building line relaxations, height, coverage and parking.</p>
         </a>
-        <a href="/services/title-deed-restrictions/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+        <a href="/services/title-deed-restrictions/" class="bg-white border border-border-subtle p-8 md:p-10 hover:border-accent hover:shadow-sm transition-all no-underline text-inherit group">
           <div class="text-4xl mb-5">🔓</div>
           <h3 class="mb-2 group-hover:text-accent transition-colors">Title Deed</h3>
           <p class="text-text-muted text-sm">Remove restrictive conditions. Unlock development potential.</p>
         </a>
-        <a href="/services/development-reports/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+        <a href="/services/development-reports/" class="bg-white border border-border-subtle p-8 md:p-10 hover:border-accent hover:shadow-sm transition-all no-underline text-inherit group">
           <div class="text-4xl mb-5">📊</div>
           <h3 class="mb-2 group-hover:text-accent transition-colors">Dev Reports</h3>
           <p class="text-text-muted text-sm">Know what your property can become. Delivered in 5–7 days.</p>
         </a>
-        <div class="bg-bg p-8 md:p-10 flex items-center justify-center">
-          <a href="/contact/" class="text-accent hover:text-accent-hover text-sm font-medium">All services →</a>
+        <div class="bg-surface p-8 md:p-10 flex items-center justify-center">
+          <a href="/services/" class="text-accent hover:text-accent-hover text-sm font-semibold">All 11 services →</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══ LOCATIONS ═══ -->
-  <section class="py-24 md:py-32 border-t border-border-subtle">
+  <section class="py-24 md:py-32 border-t border-border-subtle bg-surface">
     <div class="wrap">
       <span class="tag mb-8">Locations</span>
+      <h2 class="mb-16">Areas We <span class="text-accent">Serve</span></h2>
       <div class="grid md:grid-cols-3 gap-px bg-border-subtle">
-        <a href="/areas/cape-town/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+        <a href="/areas/cape-town/" class="bg-white border border-border-subtle p-8 md:p-10 hover:border-accent hover:shadow-sm transition-all no-underline text-inherit group">
           <h3 class="mb-1 group-hover:text-accent transition-colors">Cape Town</h3>
           <p class="text-text-muted text-sm">City Bowl · Atlantic Seaboard · Suburbs</p>
         </a>
-        <a href="/areas/somerset-west/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+        <a href="/areas/somerset-west/" class="bg-white border border-border-subtle p-8 md:p-10 hover:border-accent hover:shadow-sm transition-all no-underline text-inherit group">
           <h3 class="mb-1 group-hover:text-accent transition-colors">Somerset West</h3>
           <p class="text-text-muted text-sm">Helderberg · Strand · Gordon's Bay</p>
         </a>
-        <a href="/areas/stellenbosch/" class="bg-bg p-8 md:p-10 hover:bg-surface transition-colors no-underline text-inherit group">
+        <a href="/areas/stellenbosch/" class="bg-white border border-border-subtle p-8 md:p-10 hover:border-accent hover:shadow-sm transition-all no-underline text-inherit group">
           <h3 class="mb-1 group-hover:text-accent transition-colors">Stellenbosch</h3>
           <p class="text-text-muted text-sm">Heritage planning · Cape Winelands</p>
         </a>
@@ -93,19 +95,20 @@ const schema = {"@context":"https://schema.org","@type":"LocalBusiness","name":"
   <section class="py-24 md:py-32 border-t border-border-subtle">
     <div class="wrap">
       <span class="tag mb-8">Testimonials</span>
+      <h2 class="mb-16">Trusted by <span class="text-accent">Clients</span></h2>
       <div class="grid md:grid-cols-3 gap-px bg-border-subtle">
-        <div class="bg-bg p-8">
-          <p class="text-accent text-xs tracking-[0.3em] mb-5">★★★★★</p>
+        <div class="bg-white border border-border-subtle p-8">
+          <p class="text-accent-gold text-xs tracking-[0.3em] mb-5">★★★★★</p>
           <p class="text-text-secondary text-sm leading-relaxed mb-4">"Navigated a complex rezoning others said couldn't be done. Approved in 6 months."</p>
           <p class="text-text-muted text-xs">Developer, Somerset West</p>
         </div>
-        <div class="bg-bg p-8">
-          <p class="text-accent text-xs tracking-[0.3em] mb-5">★★★★★</p>
+        <div class="bg-white border border-border-subtle p-8">
+          <p class="text-accent-gold text-xs tracking-[0.3em] mb-5">★★★★★</p>
           <p class="text-text-secondary text-sm leading-relaxed mb-4">"I rely on their departure applications. They understand design intent."</p>
           <p class="text-text-muted text-xs">Architect, Cape Town</p>
         </div>
-        <div class="bg-bg p-8">
-          <p class="text-accent text-xs tracking-[0.3em] mb-5">★★★★★</p>
+        <div class="bg-white border border-border-subtle p-8">
+          <p class="text-accent-gold text-xs tracking-[0.3em] mb-5">★★★★★</p>
           <p class="text-text-secondary text-sm leading-relaxed mb-4">"Their report pointed us to a property with 3× the upside."</p>
           <p class="text-text-muted text-xs">Investor, Stellenbosch</p>
         </div>
@@ -114,11 +117,11 @@ const schema = {"@context":"https://schema.org","@type":"LocalBusiness","name":"
   </section>
 
   <!-- ═══ CTA ═══ -->
-  <section class="py-32 md:py-40 text-center border-t border-border-subtle">
+  <section class="py-32 md:py-40 text-center bg-accent text-white">
     <div class="narrow">
-      <h2 class="mb-6">Ready to <span class="text-accent">start</span>?</h2>
-      <p class="text-text-muted text-lg mb-10">Free land use assessment. Response within 24 hours.</p>
-      <a href="/contact/" class="btn-primary text-base px-8 py-4">Get Your Free Consultation</a>
+      <h2 class="mb-6 text-white">Ready to <span class="text-accent-gold">start</span>?</h2>
+      <p class="text-[#8AC4F9] text-lg mb-10">Free land use assessment. Response within 24 hours.</p>
+      <a href="/contact/" class="inline-flex items-center gap-2 font-semibold text-base px-8 py-4 bg-white text-accent no-underline hover:bg-accent-gold transition-colors">Get Your Free Consultation</a>
     </div>
   </section>
 </BaseLayout>
