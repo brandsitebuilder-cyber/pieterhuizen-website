@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const schema = {"@context":"https://schema.org","@type":"AboutPage","name":"About Pieterhuizen Planning"};
+---
+
+<BaseLayout title="About — Town Planners Cape Town" description="Established town planning consultancy serving the Western Cape — rezoning, subdivisions, land use applications." schema={schema}>
+
+  <section class="pt-40 pb-16 md:pt-48 md:pb-20">
+    <div class="wrap">
+      <span class="tag mb-8">about</span>
+      <div class="grid md:grid-cols-2 gap-12 md:gap-24">
+        <h1 class="text-3xl md:text-5xl font-light leading-tight">town planning is <span class="text-accent">what we do</span></h1>
+        <p class="text-text-secondary text-lg leading-relaxed self-end">Professional land use consultants based in Somerset West, serving the entire Western Cape region since 2014.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ APPROACH ═══ -->
+  <div class="wrap pb-16 md:pb-24">
+    <div class="grid md:grid-cols-3 gap-px bg-border">
+      <div class="bg-surface p-8 md:p-10 border border-border">
+        <div class="text-accent text-sm mb-6 lowercase tracking-wider">01</div>
+        <h3 class="mb-3">assess</h3>
+        <p class="text-text-muted text-sm leading-relaxed">Every project starts with understanding your property's current zoning, its constraints, and its untapped potential. We review title deeds, zoning certificates, and municipal schemes.</p>
+      </div>
+      <div class="bg-surface p-8 md:p-10 border border-border">
+        <div class="text-accent text-sm mb-6 lowercase tracking-wider">02</div>
+        <h3 class="mb-3">strategize</h3>
+        <p class="text-text-muted text-sm leading-relaxed">We map the fastest path to approval — navigating SPLUMA, municipal bylaws, and heritage regulations. No two properties are the same, and neither are our strategies.</p>
+      </div>
+      <div class="bg-surface p-8 md:p-10 border border-border">
+        <div class="text-accent text-sm mb-6 lowercase tracking-wider">03</div>
+        <h3 class="mb-3">deliver</h3>
+        <p class="text-text-muted text-sm leading-relaxed">Motivation reports, site development plans, and council liaison — until your approval comes through. We stay with the application every step of the way.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ VALUES ═══ -->
+  <section class="py-32 md:py-40 section-alt">
+    <div class="wrap">
+      <span class="tag mb-10">our values</span>
+      <h2 class="text-3xl md:text-4xl font-light mb-20">what drives <span class="text-accent">us</span></h2>
+      <div class="grid md:grid-cols-3 gap-px bg-border">
+        <div class="bg-bg p-8 md:p-10 border border-border">
+          <h3 class="mb-3">experience</h3>
+          <p class="text-text-muted text-sm leading-relaxed">10+ years navigating Western Cape municipal planning systems. We know which applications succeed — and how to frame them. Over 50 approved projects across the region.</p>
+        </div>
+        <div class="bg-bg p-8 md:p-10 border border-border">
+          <h3 class="mb-3">reliability</h3>
+          <p class="text-text-muted text-sm leading-relaxed">Clear timelines, regular updates, and no surprises. Developers, architects and property investors trust us to deliver on time and within scope.</p>
+        </div>
+        <div class="bg-bg p-8 md:p-10 border border-border">
+          <h3 class="mb-3">results</h3>
+          <p class="text-text-muted text-sm leading-relaxed">We measure success by approvals. Every application is prepared with the precision that councils expect — and the advocacy they respond to.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 md:py-40 text-center">
+    <div class="narrow">
+      <h2 class="text-3xl md:text-5xl font-light mb-8">work with <span class="text-accent">us</span></h2>
+      <p class="text-text-secondary text-lg mb-12">free land use assessment. response within 24 hours.</p>
+      <a href="/contact/" class="btn-primary">[ get your free consultation ]</a>
+    </div>
+  </section>
+
+</BaseLayout>

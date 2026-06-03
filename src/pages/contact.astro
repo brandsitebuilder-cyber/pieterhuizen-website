@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const schema = {"@context":"https://schema.org","@type":"ContactPage"};
+---
+
+<BaseLayout title="Contact — Free Land Use Assessment" description="Free consultation for rezoning, subdivisions and land use. Town planners Cape Town." schema={schema}>
+
+  <section class="pt-40 pb-16 md:pt-48 md:pb-20">
+    <div class="wrap">
+      <span class="tag mb-8">contact</span>
+      <div class="grid md:grid-cols-2 gap-12 md:gap-24">
+        <h1 class="text-3xl md:text-5xl font-light leading-tight">let's <span class="text-accent">talk</span></h1>
+        <p class="text-text-secondary text-lg leading-relaxed self-end">free land use assessment. we'll review your property and outline the path forward — no obligation.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap pb-32 md:pb-40">
+    <div class="grid md:grid-cols-5 gap-px bg-border">
+      <div class="md:col-span-3 bg-surface p-8 md:p-12 border border-border">
+        <h3 class="text-lg font-medium mb-8 lowercase">send a message</h3>
+        <form class="space-y-6" action="https://formsubmit.co/marcus@brandaisolutions.co.za" method="POST">
+          <input type="hidden" name="_subject" value="New enquiry — Pieterhuizen Planning">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <div><label class="form-label">name</label><input class="form-input" type="text" name="name" placeholder="your name" required></div>
+          <div class="grid grid-cols-2 gap-4">
+            <div><label class="form-label">email</label><input class="form-input" type="email" name="email" placeholder="you@email.com" required></div>
+            <div><label class="form-label">phone</label><input class="form-input" type="tel" name="phone" placeholder="your number"></div>
+          </div>
+          <div><label class="form-label">tell us about your property</label><textarea class="form-input" name="message" rows="5" placeholder="briefly describe your property and what you'd like to achieve..." required></textarea></div>
+          <button type="submit" class="btn-primary w-full justify-center">[ send message ]</button>
+        </form>
+      </div>
+      <div class="md:col-span-2 bg-surface p-8 md:p-12 border border-border">
+        <h3 class="text-lg font-medium mb-8 lowercase">contact details</h3>
+        <div class="space-y-8 text-text-secondary">
+          <div>
+            <p class="text-xs text-text-muted mb-1 uppercase tracking-wider">phone</p>
+            <p><a href="tel:+272****3456" class="text-text hover:text-accent transition-colors no-underline">021 852 3456</a></p>
+          </div>
+          <div>
+            <p class="text-xs text-text-muted mb-1 uppercase tracking-wider">email</p>
+            <p><a href="mailto:info@pieterhuizen.co.za" class="text-text hover:text-accent transition-colors no-underline">info@pieterhuizen.co.za</a></p>
+          </div>
+          <div>
+            <p class="text-xs text-text-muted mb-1 uppercase tracking-wider">location</p>
+            <p class="text-text">somerset west<br>western cape</p>
+          </div>
+          <div>
+            <p class="text-xs text-text-muted mb-1 uppercase tracking-wider">hours</p>
+            <p class="text-text">mon–fri · 8:00–17:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

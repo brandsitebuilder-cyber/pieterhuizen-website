@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const services = [
+  {id:"rezoning",name:"Rezoning",icon:"🏗️",desc:"Change the use rights of a property. Applications for all Western Cape municipalities — residential, commercial, industrial, and agricultural."},
+  {id:"subdivisions",name:"Subdivisions",icon:"📐",desc:"Divide land into multiple erven. We handle consolidations, sectional title schemes, and the full SPLUMA process from survey to approval."},
+  {id:"departures",name:"Departures",icon:"📋",desc:"Relaxations on building lines, height restrictions, coverage limits, and parking requirements. We frame applications that councils approve."},
+  {id:"title-deed",name:"Title Deed Restrictions",icon:"🔓",desc:"Remove restrictive conditions from your title deed. Unlock development potential that's been locked for decades."},
+  {id:"development",name:"Development Reports",icon:"📊",desc:"Comprehensive property potential analysis. Zoning compliance, density calculations, and development feasibility — delivered in 5–7 days."},
+  {id:"consolidation",name:"Consolidation",icon:"🧩",desc:"Combine multiple erven into a single property. Streamline development across stands and remove internal boundaries."},
+  {id:"consent-use",name:"Consent Use",icon:"✋",desc:"Apply for a use not normally permitted in a zone. Secondary rights on a property — essential for mixed-use developments."},
+  {id:"removal-conditions",name:"Removal of Conditions",icon:"🗑️",desc:"Remove outdated conditions of approval attached to previous applications. Clear the path for your current project."},
+  {id:"zoning",name:"Zoning Compliance",icon:"✓",desc:"Verify lawful use of your property. Essential for business licenses, property transfers, and liquor licence applications."},
+  {id:"property-dev",name:"Property Development",icon:"🏘️",desc:"Full development potential reports. Building envelope, density analysis, and use optimization for maximum return."},
+  {id:"property-owner",name:"Property Ownership",icon:"🏠",desc:"Understand your property rights, servitudes, ownership structures, and development obligations."},
+];
+---
+
+<BaseLayout title="Town Planning Services — Rezoning, Subdivisions & Land Use" description="Complete town planning services: rezoning, subdivision, departure, consent use, title deed removal, zoning compliance and development reports.">
+
+  <!-- ═══ HEADER ═══ -->
+  <section class="pt-40 pb-16 md:pt-48 md:pb-20">
+    <div class="wrap">
+      <span class="tag mb-8">services</span>
+      <div class="grid md:grid-cols-2 gap-12 md:gap-24">
+        <h1 class="text-3xl md:text-5xl font-light leading-tight">town planning <span class="text-accent">services</span></h1>
+        <p class="text-text-secondary text-lg leading-relaxed self-end">Every service needed to take a property from constrained to approved. We handle the full application process — from initial assessment to council approval.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES GRID ═══ -->
+  <div class="wrap pb-32 md:pb-40">
+    <div class="grid md:grid-cols-3 gap-px bg-border">
+      {services.map((s, i) => (
+        <div id={s.id} class="bg-surface p-8 md:p-10 hover:bg-elevated transition-colors border border-border">
+          <div class="text-accent text-sm mb-6 lowercase tracking-wider">{String(i+1).padStart(2,'0')}</div>
+          <div class="text-3xl mb-5">{s.icon}</div>
+          <h3 class="text-lg font-medium mb-3">{s.name}</h3>
+          <p class="text-text-muted text-sm leading-relaxed">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="py-32 md:py-40 text-center section-alt">
+    <div class="narrow">
+      <h2 class="text-3xl md:text-5xl font-light mb-8">not sure what you <span class="text-accent">need</span>?</h2>
+      <p class="text-text-secondary text-lg mb-12">free land use assessment. we'll identify the right application for your property.</p>
+      <a href="/contact/" class="btn-primary">[ get your free consultation ]</a>
+    </div>
+  </section>
+
+</BaseLayout>
