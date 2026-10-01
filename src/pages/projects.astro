@@ -1,53 +1,114 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const projects = [
-  {name:"Residential Rezoning",location:"Somerset West",year:"2026",desc:"Rezoning from single residential to general residential, enabling a 12-unit development."},
-  {name:"Estate Subdivision",location:"Stellenbosch",year:"2025",desc:"Subdivision of a 4.2ha agricultural holding into 8 residential erven."},
-  {name:"Building Line Departure",location:"Cape Town",year:"2025",desc:"Departure application for a zero building line on a constrained Atlantic Seaboard site."},
-  {name:"Title Deed Removal",location:"Helderberg",year:"2025",desc:"Removal of a 1968 restrictive condition blocking commercial use on a main road property."},
-  {name:"Consent Use — Office",location:"Durbanville",year:"2024",desc:"Consent use application for a professional office in a residential zone."},
-  {name:"Development Report",location:"Paarl",year:"2024",desc:"Comprehensive development potential report for a 15ha wine farm with heritage constraints."},
-  {name:"Consolidation + Rezoning",location:"Somerset West",year:"2024",desc:"Consolidation of 3 erven and rezoning for a mixed-use development."},
-  {name:"Zoning Compliance",location:"Strand",year:"2024",desc:"Zoning verification for a business licence application — fast-tracked in 48 hours."},
-  {name:"Subdivision — Sectional Title",location:"Gordon's Bay",year:"2023",desc:"Sectional title scheme registration for a 6-unit development on a steep slope site."},
-];
 ---
 
-<BaseLayout title="Projects — Town Planning Portfolio" description="Recent town planning projects across Cape Town, Somerset West, Stellenbosch and the Western Cape.">
+<BaseLayout
+  title="Projects — Town Planning Case Studies"
+  description="Recent town planning projects. Rezoning, subdivisions, departures and land use applications across the Western Cape."
+>
 
-  <section class="pt-40 pb-16 md:pt-48 md:pb-20">
-    <div class="wrap">
-      <span class="tag mb-8">projects</span>
-      <div class="grid md:grid-cols-2 gap-12 md:gap-24">
-        <h1 class="text-3xl md:text-5xl font-light leading-tight">featured <span class="text-accent">projects</span></h1>
-        <p class="text-text-secondary text-lg leading-relaxed self-end">A selection of recent town planning applications across the Western Cape. Each project represents a unique challenge — and a successful outcome.</p>
-      </div>
+  <!-- Hero -->
+  <section class="hero" style="min-height:50vh">
+    <div class="hero-image" style="background: url('/hero-bg.jpg') center/cover no-repeat"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" style="padding-bottom:4rem">
+      <div class="hero-label">Portfolio</div>
+      <h1 class="hero-title">Projects</h1>
+      <p class="hero-subtitle">
+        A selection of recent town planning applications across the Western Cape.
+      </p>
     </div>
   </section>
 
-  <div class="wrap pb-32 md:pb-40">
-    <div class="grid md:grid-cols-3 gap-6">
-      {projects.map(p => (
-        <div class="group">
-          <div class="img-placeholder h-64 mb-4"><span>{p.name.toLowerCase()}</span></div>
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <p class="text-sm font-medium mb-1">{p.name}</p>
-              <p class="text-text-muted text-xs mb-2">{p.location}</p>
-              <p class="text-text-muted text-xs leading-relaxed">{p.desc}</p>
-            </div>
-            <span class="text-text-muted text-xs whitespace-nowrap">{p.year}</span>
+  <!-- Project grid (F+P style) -->
+  <section style="padding:6rem 0">
+    <div class="wrap">
+      <div class="project-grid">
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-1131863.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Residential Rezoning</div>
+            <div class="project-card-meta">Somerset West &middot; 2026</div>
           </div>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <section class="py-32 md:py-40 text-center section-alt">
-    <div class="narrow">
-      <h2 class="text-3xl md:text-5xl font-light mb-8">have a <span class="text-accent">project</span> in mind?</h2>
-      <p class="text-text-secondary text-lg mb-12">free land use assessment. we'll outline the path forward.</p>
-      <a href="/contact/" class="btn-primary">[ start your project ]</a>
+        </a>
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-1586148.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Estate Subdivision</div>
+            <div class="project-card-meta">Stellenbosch &middot; 2025</div>
+          </div>
+        </a>
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-10702041.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Building Line Departure</div>
+            <div class="project-card-meta">Cape Town &middot; 2025</div>
+          </div>
+        </a>
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-2514002.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Mixed-Use Application</div>
+            <div class="project-card-meta">Durbanville &middot; 2025</div>
+          </div>
+        </a>
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-19234024.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Estate Consolidation</div>
+            <div class="project-card-meta">Paarl &middot; 2024</div>
+          </div>
+        </a>
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-17189038.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Sectional Title Scheme</div>
+            <div class="project-card-meta">Somerset West &middot; 2024</div>
+          </div>
+        </a>
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-12318703.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Title Deed Removal</div>
+            <div class="project-card-meta">Strand &middot; 2024</div>
+          </div>
+        </a>
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-37721311.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Township Establishment</div>
+            <div class="project-card-meta">Franschhoek &middot; 2023</div>
+          </div>
+        </a>
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-323705.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Consent Use: Guest House</div>
+            <div class="project-card-meta">Gordon's Bay &middot; 2023</div>
+          </div>
+        </a>
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-6344231.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Heritage Area Application</div>
+            <div class="project-card-meta">Stellenbosch &middot; 2023</div>
+          </div>
+        </a>
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-18787165.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Parking Departure</div>
+            <div class="project-card-meta">Bellville &middot; 2022</div>
+          </div>
+        </a>
+        <a href="#" class="project-card">
+          <div class="project-card-image" style="background: url('/images/img-31111028.jpg') center/cover no-repeat"></div>
+          <div class="project-card-info">
+            <div class="project-card-name">Coverage Relaxation</div>
+            <div class="project-card-meta">Cape Town &middot; 2022</div>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 

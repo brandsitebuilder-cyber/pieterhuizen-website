@@ -1,59 +1,107 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const schema = {"@context":"https://schema.org","@type":"ContactPage"};
 ---
 
-<BaseLayout title="Contact — Free Land Use Assessment" description="Free consultation for rezoning, subdivisions and land use. Town planners Cape Town." schema={schema}>
+<BaseLayout
+  title="Contact — Pieterhuizen Planning"
+  description="Get in touch for a free land use assessment. Town planning consultants based in Somerset West, Western Cape."
+>
 
-  <section class="pt-40 pb-16 md:pt-48 md:pb-20">
-    <div class="wrap">
-      <span class="tag mb-8">contact</span>
-      <div class="grid md:grid-cols-2 gap-12 md:gap-24">
-        <h1 class="text-3xl md:text-5xl font-light leading-tight">let's <span class="text-accent">talk</span></h1>
-        <p class="text-text-secondary text-lg leading-relaxed self-end">free land use assessment. we'll review your property and outline the path forward — no obligation.</p>
-      </div>
+  <!-- Hero -->
+  <section class="hero" style="min-height:50vh">
+    <div class="hero-image" style="background: url('/hero-bg.jpg') center/cover no-repeat"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" style="padding-bottom:4rem">
+      <div class="hero-label">Get in touch</div>
+      <h1 class="hero-title">Contact</h1>
+      <p class="hero-subtitle">
+        Free initial assessment. We typically respond within 24 hours.
+      </p>
     </div>
   </section>
 
-  <div class="wrap pb-32 md:pb-40">
-    <div class="grid md:grid-cols-5 gap-px bg-border">
-      <div class="md:col-span-3 bg-surface p-8 md:p-12 border border-border">
-        <h3 class="text-lg font-medium mb-8 lowercase">send a message</h3>
-        <form class="space-y-6" action="https://formsubmit.co/marcus@brandaisolutions.co.za" method="POST">
-          <input type="hidden" name="_subject" value="New enquiry — Pieterhuizen Planning">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <div><label class="form-label">name</label><input class="form-input" type="text" name="name" placeholder="your name" required></div>
-          <div class="grid grid-cols-2 gap-4">
-            <div><label class="form-label">email</label><input class="form-input" type="email" name="email" placeholder="you@email.com" required></div>
-            <div><label class="form-label">phone</label><input class="form-input" type="tel" name="phone" placeholder="your number"></div>
+  <!-- Contact (F+P style split) -->
+  <section style="padding:6rem 0">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr;gap:4rem">
+        <!-- Form column -->
+        <div>
+          <h2 class="section-heading" style="margin-bottom:3rem">New enquiry</h2>
+          <form action="https://formsubmit.co/marcus@brandaisolutions.co.za" method="POST" style="max-width:36rem">
+            <input type="hidden" name="_subject" value="Pieterhuizen Planning Enquiry">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+            <div style="margin-bottom:2rem">
+              <label class="form-label" for="name">Name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+            </div>
+            <div style="margin-bottom:2rem">
+              <label class="form-label" for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="Your email" required>
+            </div>
+            <div style="margin-bottom:2rem">
+              <label class="form-label" for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="Your phone number">
+            </div>
+            <div style="margin-bottom:2rem">
+              <label class="form-label" for="service">Service</label>
+              <select id="service" name="service" class="form-input" style="appearance:none;background:transparent">
+                <option value="">Select a service</option>
+                <option value="rezoning">Rezoning</option>
+                <option value="subdivision">Subdivision</option>
+                <option value="departure">Departure</option>
+                <option value="title-deed">Title deed removal</option>
+                <option value="development-report">Development report</option>
+                <option value="consent-use">Consent use</option>
+                <option value="other">Other / Not sure</option>
+              </select>
+            </div>
+            <div style="margin-bottom:2.5rem">
+              <label class="form-label" for="message">Message</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your property and what you need" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send enquiry</button>
+          </form>
+        </div>
+
+        <!-- Info column -->
+        <div>
+          <h2 class="section-heading" style="margin-bottom:3rem">Office</h2>
+
+          <!-- Somerset West -->
+          <div class="split-section" style="min-height:auto;margin-bottom:2rem">
+            <div class="split-image" style="min-height:200px;background:url('/images/img-29561793.jpg') center/cover no-repeat"></div>
+            <div class="split-text">
+              <h3 style="margin-bottom:0.5rem">Somerset West</h3>
+              <p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:0.25rem">Helderberg Office Park</p>
+              <p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:0.25rem">Somerset West, 7130</p>
+              <p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:0.75rem">Western Cape, South Africa</p>
+              <a href="tel:+278****4843" style="color:var(--color-text);font-size:0.8125rem;text-decoration:none">083 262 4843</a>
+            </div>
           </div>
-          <div><label class="form-label">tell us about your property</label><textarea class="form-input" name="message" rows="5" placeholder="briefly describe your property and what you'd like to achieve..." required></textarea></div>
-          <button type="submit" class="btn-primary w-full justify-center">[ send message ]</button>
-        </form>
-      </div>
-      <div class="md:col-span-2 bg-surface p-8 md:p-12 border border-border">
-        <h3 class="text-lg font-medium mb-8 lowercase">contact details</h3>
-        <div class="space-y-8 text-text-secondary">
-          <div>
-            <p class="text-xs text-text-muted mb-1 uppercase tracking-wider">phone</p>
-            <p><a href="tel:+272****3456" class="text-text hover:text-accent transition-colors no-underline">021 852 3456</a></p>
-          </div>
-          <div>
-            <p class="text-xs text-text-muted mb-1 uppercase tracking-wider">email</p>
-            <p><a href="mailto:info@pieterhuizen.co.za" class="text-text hover:text-accent transition-colors no-underline">info@pieterhuizen.co.za</a></p>
-          </div>
-          <div>
-            <p class="text-xs text-text-muted mb-1 uppercase tracking-wider">location</p>
-            <p class="text-text">somerset west<br>western cape</p>
-          </div>
-          <div>
-            <p class="text-xs text-text-muted mb-1 uppercase tracking-wider">hours</p>
-            <p class="text-text">mon–fri · 8:00–17:00</p>
+
+          <!-- Contact details -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.5px;margin-top:3rem">
+            <div class="split-text">
+              <h3 style="margin-bottom:0.5rem">WhatsApp</h3>
+              <p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:0.25rem">Quickest response</p>
+              <a href="https://wa.me/27832624843" style="color:var(--color-text);font-size:0.8125rem;text-decoration:none">+27 83 262 4843</a>
+            </div>
+            <div class="split-text">
+              <h3 style="margin-bottom:0.5rem">General</h3>
+              <p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:0.25rem">Information</p>
+              <a href="mailto:wilhelm@pieterhuizen.co.za" style="color:var(--color-text);font-size:0.8125rem;text-decoration:none">wilhelm@pieterhuizen.co.za</a>
+            </div>
+            <div class="split-text">
+              <h3 style="margin-bottom:0.5rem">New business</h3>
+              <p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:0.25rem">Project enquiries</p>
+              <a href="mailto:wilhelm@pieterhuizen.co.za" style="color:var(--color-text);font-size:0.8125rem;text-decoration:none">wilhelm@pieterhuizen.co.za</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
 </BaseLayout>

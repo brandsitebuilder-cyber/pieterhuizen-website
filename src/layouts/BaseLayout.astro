@@ -6,23 +6,22 @@ const currentPath = Astro.url.pathname;
 ---
 
 <script is:inline>
-  // Dark/light toggle
-  const theme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', theme);
   document.addEventListener('DOMContentLoaded', () => {
-    window.toggleTheme = () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    };
-    // Nav scroll effect
+    // Menu toggle
+    const menuBtn = document.querySelector('.nav-menu');
+    const overlay = document.getElementById('menu-overlay');
+    const closeBtn = document.querySelector('.menu-close');
+    menuBtn?.addEventListener('click', () => overlay?.classList.add('open'));
+    closeBtn?.addEventListener('click', () => overlay?.classList.remove('open'));
+    overlay?.addEventListener('click', (e) => {
+      if (e.target === overlay) overlay.classList.remove('open');
+    });
+
+    // Nav scroll
     const nav = document.querySelector('.nav');
-    if (nav) {
-      window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 50);
-      });
-    }
+    window.addEventListener('scroll', () => {
+      nav?.classList.toggle('scrolled', window.scrollY > 50);
+    });
   });
 </script>
 
@@ -43,80 +42,76 @@ const currentPath = Astro.url.pathname;
 <body>
 
 <nav class="nav scrolled">
-  <div class="wrap flex items-center justify-between py-4">
-    <a href="/" class="flex items-center gap-3 no-underline">
-      <span class="text-white text-lg font-semibold tracking-tight">pieterhuizen</span>
-      <span class="text-text-muted text-xs font-normal hidden sm:inline">planning</span>
-    </a>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="/services/" class={`nav-link ${currentPath.startsWith('/services') ? 'active' : ''}`}>[ services ]</a>
-      <a href="/projects/" class={`nav-link ${currentPath.startsWith('/projects') ? 'active' : ''}`}>[ projects ]</a>
-      <a href="/about/" class={`nav-link ${currentPath === '/about/' ? 'active' : ''}`}>[ about ]</a>
-      <a href="/contact/" class={`nav-link ${currentPath === '/contact/' ? 'active' : ''}`}>[ contact ]</a>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Pieterhuizen Planning</a>
+    <div class="nav-links">
+      <a href="/services/" class="nav-link {currentPath.startsWith('/services') ? 'active' : ''}">services</a>
+      <a href="/projects/" class="nav-link {currentPath.startsWith('/projects') ? 'active' : ''}">projects</a>
+      <a href="/about/" class="nav-link {currentPath === '/about/' ? 'active' : ''}">about</a>
+      <a href="/contact/" class="nav-link {currentPath === '/contact/' ? 'active' : ''}">contact</a>
     </div>
-    <div class="flex items-center gap-4">
-      <button onclick="toggleTheme()" class="text-text-muted hover:text-text text-xs lowercase tracking-wider transition-colors bg-transparent border-0 cursor-pointer">dark / light</button>
-      <button class="md:hidden text-text-secondary text-xs lowercase tracking-wider bg-transparent border-0 cursor-pointer" onclick="document.getElementById('mobile-menu')?.classList.toggle('hidden')">menu</button>
-    </div>
-  </div>
-  <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-border">
-    <div class="wrap py-6 flex flex-col gap-4">
-      <a href="/services/" class="nav-link">[ services ]</a>
-      <a href="/projects/" class="nav-link">[ projects ]</a>
-      <a href="/about/" class="nav-link">[ about ]</a>
-      <a href="/contact/" class="nav-link">[ contact ]</a>
+    <div class="nav-actions">
+      <span class="nav-search">search</span>
+      <button class="nav-menu">menu</button>
     </div>
   </div>
 </nav>
 
+<!-- Full-screen menu overlay -->
+<div id="menu-overlay">
+  <button class="menu-close">close</button>
+  <a href="/services/" class="menu-item">services</a>
+  <a href="/projects/" class="menu-item">projects</a>
+  <a href="/about/" class="menu-item">about</a>
+  <a href="/contact/" class="menu-item">contact</a>
+</div>
+
 <main><slot /></main>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/27832624843" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="white"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm-2.58 3.76c-.17-.01-.37.02-.55.1-.27.13-.82.39-1.12 1.13-.32.78-.07 1.63.27 2.21.35.62 1.4 2.33 3.22 3.54 1.64 1.09 2.27 1.08 3.03.82.34-.12 1.12-.55 1.39-1.18.27-.63.27-1.08.19-1.18-.08-.1-.22-.17-.49-.29-.26-.12-1.46-.72-1.69-.8-.22-.08-.38-.12-.54.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.77-1.84-.2-.48-.4-.42-.56-.42z"/></svg>
+</a>
 
 <footer>
   <div class="wrap">
-    <div class="grid md:grid-cols-4 gap-12 mb-16">
-      <div class="md:col-span-1">
-        <p class="text-white font-semibold text-lg mb-2">pieterhuizen</p>
-        <p class="text-text-muted text-xs lowercase">planning</p>
-        <p class="text-text-muted text-xs mt-4 leading-relaxed">Town planning consultants<br>Somerset West, Western Cape</p>
+    <div class="footer-grid">
+      <div>
+        <p style="color:var(--color-text);font-size:1.0625rem;font-weight:400;margin-bottom:0.75rem">Pieterhuizen Planning</p>
+        <p style="color:var(--color-text-muted);font-size:0.8125rem;max-width:20rem">Town planning consultants serving the Western Cape. Rezoning, subdivisions, departures and land use applications.</p>
       </div>
       <div>
-        <h4>services</h4>
-        <ul class="space-y-2">
-          <li><a href="/services/#rezoning">rezoning</a></li>
-          <li><a href="/services/#subdivisions">subdivisions</a></li>
-          <li><a href="/services/#departures">departures</a></li>
-          <li><a href="/services/#development">development reports</a></li>
-          <li><a href="/services/">all services →</a></li>
-        </ul>
+        <h4>Services</h4>
+        <div style="display:flex;flex-direction:column;gap:0.75rem">
+          <a href="/services/#rezoning">Rezoning</a>
+          <a href="/services/#subdivisions">Subdivisions</a>
+          <a href="/services/#departures">Departures</a>
+          <a href="/services/#development">Development reports</a>
+          <a href="/services/">All services</a>
+        </div>
       </div>
       <div>
-        <h4>company</h4>
-        <ul class="space-y-2">
-          <li><a href="/about/">about</a></li>
-          <li><a href="/projects/">projects</a></li>
-          <li><a href="/contact/">contact</a></li>
-        </ul>
-        <h4 class="mt-8">contact</h4>
-        <ul class="space-y-2">
-          <li><a href="tel:+27218523456">021 852 3456</a></li>
-          <li><a href="mailto:info@pieterhuizen.co.za">info@pieterhuizen.co.za</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>newsletter</h4>
-        <p class="text-text-muted text-xs mb-3">Stay informed about planning regulations and property insights.</p>
-        <form class="flex gap-2">
-          <input type="email" placeholder="your email" class="form-input flex-1 text-xs" />
-          <button type="submit" class="btn-primary !px-4 !py-2 !text-xs whitespace-nowrap">subscribe</button>
-        </form>
+        <h4>Company</h4>
+        <div style="display:flex;flex-direction:column;gap:0.75rem">
+          <a href="/about/">About</a>
+          <a href="/projects/">Projects</a>
+          <a href="/contact/">Contact</a>
+          <a href="https://wa.me/27832624843">WhatsApp</a>
+          <a href="tel:+27832624843">083 262 4843</a>
+          <a href="mailto:wilhelm@pieterhuizen.co.za">wilhelm@pieterhuizen.co.za</a>
+        </div>
       </div>
     </div>
-    <div class="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted">
-      <p>&copy; {new Date().getFullYear()} Pieterhuizen Planning (PTY) Ltd. all rights reserved.</p>
-      <div class="flex gap-6 lowercase">
-        <a href="#" class="hover:text-text transition-colors">privacy</a>
-        <a href="#" class="hover:text-text transition-colors">terms</a>
-        <a href="#" class="hover:text-text transition-colors">linkedin</a>
+    <div class="footer-bottom">
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+      </div>
+      <div style="display:flex;gap:1.5rem;font-size:0.75rem;color:var(--color-text-muted)">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <span>&copy; {new Date().getFullYear()} Pieterhuizen Planning</span>
       </div>
     </div>
   </div>

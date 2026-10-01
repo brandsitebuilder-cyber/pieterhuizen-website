@@ -1,53 +1,109 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const services = [
-  {id:"rezoning",name:"Rezoning",icon:"🏗️",desc:"Change the use rights of a property. Applications for all Western Cape municipalities — residential, commercial, industrial, and agricultural."},
-  {id:"subdivisions",name:"Subdivisions",icon:"📐",desc:"Divide land into multiple erven. We handle consolidations, sectional title schemes, and the full SPLUMA process from survey to approval."},
-  {id:"departures",name:"Departures",icon:"📋",desc:"Relaxations on building lines, height restrictions, coverage limits, and parking requirements. We frame applications that councils approve."},
-  {id:"title-deed",name:"Title Deed Restrictions",icon:"🔓",desc:"Remove restrictive conditions from your title deed. Unlock development potential that's been locked for decades."},
-  {id:"development",name:"Development Reports",icon:"📊",desc:"Comprehensive property potential analysis. Zoning compliance, density calculations, and development feasibility — delivered in 5–7 days."},
-  {id:"consolidation",name:"Consolidation",icon:"🧩",desc:"Combine multiple erven into a single property. Streamline development across stands and remove internal boundaries."},
-  {id:"consent-use",name:"Consent Use",icon:"✋",desc:"Apply for a use not normally permitted in a zone. Secondary rights on a property — essential for mixed-use developments."},
-  {id:"removal-conditions",name:"Removal of Conditions",icon:"🗑️",desc:"Remove outdated conditions of approval attached to previous applications. Clear the path for your current project."},
-  {id:"zoning",name:"Zoning Compliance",icon:"✓",desc:"Verify lawful use of your property. Essential for business licenses, property transfers, and liquor licence applications."},
-  {id:"property-dev",name:"Property Development",icon:"🏘️",desc:"Full development potential reports. Building envelope, density analysis, and use optimization for maximum return."},
-  {id:"property-owner",name:"Property Ownership",icon:"🏠",desc:"Understand your property rights, servitudes, ownership structures, and development obligations."},
-];
 ---
 
-<BaseLayout title="Town Planning Services — Rezoning, Subdivisions & Land Use" description="Complete town planning services: rezoning, subdivision, departure, consent use, title deed removal, zoning compliance and development reports.">
+<BaseLayout
+  title="Services — Rezoning, Subdivisions & Land Use Applications"
+  description="Full range of town planning services. Rezoning, subdivisions, departures, title deed removal, development reports and more."
+>
 
-  <!-- ═══ HEADER ═══ -->
-  <section class="pt-40 pb-16 md:pt-48 md:pb-20">
+  <!-- Hero -->
+  <section class="hero" style="min-height:50vh">
+    <div class="hero-image" style="background: url('/hero-bg.jpg') center/cover no-repeat"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" style="padding-bottom:4rem">
+      <div class="hero-label">Expertise</div>
+      <h1 class="hero-title">Services</h1>
+      <p class="hero-subtitle">
+        Every service needed to take a property from constrained to approved.
+      </p>
+    </div>
+  </section>
+
+  <!-- All services -->
+  <section style="padding:6rem 0">
     <div class="wrap">
-      <span class="tag mb-8">services</span>
-      <div class="grid md:grid-cols-2 gap-12 md:gap-24">
-        <h1 class="text-3xl md:text-5xl font-light leading-tight">town planning <span class="text-accent">services</span></h1>
-        <p class="text-text-secondary text-lg leading-relaxed self-end">Every service needed to take a property from constrained to approved. We handle the full application process — from initial assessment to council approval.</p>
+
+      <!-- Split: Rezoning -->
+      <div class="split-section" id="rezoning">
+        <div class="split-image" style="background: url('/images/img-3129839.jpg') center/cover no-repeat"></div>
+        <div class="split-text">
+          <h3 style="margin-bottom:1.5rem">Rezoning</h3>
+          <p style="margin-bottom:1rem">Change the use rights of a property. Whether you need to convert agricultural land to residential, or commercial to mixed-use &mdash; we handle the full application.</p>
+          <p style="margin-bottom:1rem">Rezoning applications typically involve public participation, traffic impact studies, and environmental assessments. We coordinate all specialist inputs.</p>
+          <p style="font-size:0.8125rem;color:var(--color-text-muted)">Timeline: 6&ndash;18 months depending on municipality</p>
+        </div>
+      </div>
+
+      <!-- Split: Subdivisions -->
+      <div class="split-section" id="subdivisions" style="flex-direction:row-reverse">
+        <div class="split-image" style="background: url('/images/img-7937283.jpg') center/cover no-repeat"></div>
+        <div class="split-text">
+          <h3 style="margin-bottom:1.5rem">Subdivisions &amp; Consolidations</h3>
+          <p style="margin-bottom:1rem">Divide land into multiple erven, or consolidate several properties into one. We handle the cadastral, engineering and planning requirements.</p>
+          <p style="margin-bottom:1rem">From a simple two-portions subdivision to complex estate layouts &mdash; every application is built on a thorough understanding of the Spatial Development Framework.</p>
+          <p style="font-size:0.8125rem;color:var(--color-text-muted)">Includes sectional title schemes</p>
+        </div>
+      </div>
+
+      <!-- Split: Departures -->
+      <div class="split-section" id="departures">
+        <div class="split-image" style="background: url('/images/img-30132298.jpg') center/cover no-repeat"></div>
+        <div class="split-text">
+          <h3 style="margin-bottom:1.5rem">Departures</h3>
+          <p style="margin-bottom:1rem">Relaxations on building lines, height restrictions, coverage, floor area ratio and parking requirements. Every municipality has different zoning scheme regulations.</p>
+          <p style="margin-bottom:1rem">We work closely with architects to prepare motivation reports that demonstrate why the departure is justified and how it won't negatively impact neighbours.</p>
+          <p style="font-size:0.8125rem;color:var(--color-text-muted)">Timeline: 3&ndash;6 months</p>
+        </div>
+      </div>
+
+      <!-- Card grid: remaining services -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0.5px;margin-top:0.5px">
+        <div class="split-text" id="title-deed">
+          <h3 style="margin-bottom:0.75rem">Title Deed Removal</h3>
+          <p style="font-size:0.875rem">Remove restrictive conditions limiting development potential. Historical conditions often no longer align with current spatial planning.</p>
+        </div>
+        <div class="split-text" id="development">
+          <h3 style="margin-bottom:0.75rem">Development Reports</h3>
+          <p style="font-size:0.875rem">Know what your property can become. Zoning compliance certificates, development potential assessments, and pre-purchase due diligence.</p>
+        </div>
+        <div class="split-text" id="consent-use">
+          <h3 style="margin-bottom:0.75rem">Consent Use</h3>
+          <p style="font-size:0.875rem">Secondary use rights &mdash; guest houses, home offices, second dwellings. Conditional approval from the municipality.</p>
+        </div>
+        <div class="split-text" id="spatial">
+          <h3 style="margin-bottom:0.75rem">Spatial Planning</h3>
+          <p style="font-size:0.875rem">Strategic land use planning. Site development plans, layout plans, and precinct-level spatial frameworks.</p>
+        </div>
+        <div class="split-text" id="applications">
+          <h3 style="margin-bottom:0.75rem">Land Use Applications</h3>
+          <p style="font-size:0.875rem">SPLUMA-compliant applications. All categories of land development as defined by the Spatial Planning and Land Use Management Act.</p>
+        </div>
+        <div class="split-text" id="heritage">
+          <h3 style="margin-bottom:0.75rem">Heritage Planning</h3>
+          <p style="font-size:0.875rem">Heritage impact assessments and applications in heritage-sensitive areas. Stellenbosch, Franschhoek, and Cape Winelands expertise.</p>
+        </div>
+        <div class="split-text" id="township">
+          <h3 style="margin-bottom:0.75rem">Township Establishment</h3>
+          <p style="font-size:0.875rem">Create new townships from undeveloped land. Full engineering services coordination and environmental authorisation.</p>
+        </div>
+        <div class="split-text" id="removal">
+          <h3 style="margin-bottom:0.75rem">Restrictive Title Removal</h3>
+          <p style="font-size:0.875rem">Remove or amend conditions in title deeds that restrict land use, building lines, or development rights.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ SERVICES GRID ═══ -->
-  <div class="wrap pb-32 md:pb-40">
-    <div class="grid md:grid-cols-3 gap-px bg-border">
-      {services.map((s, i) => (
-        <div id={s.id} class="bg-surface p-8 md:p-10 hover:bg-elevated transition-colors border border-border">
-          <div class="text-accent text-sm mb-6 lowercase tracking-wider">{String(i+1).padStart(2,'0')}</div>
-          <div class="text-3xl mb-5">{s.icon}</div>
-          <h3 class="text-lg font-medium mb-3">{s.name}</h3>
-          <p class="text-text-muted text-sm leading-relaxed">{s.desc}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <!-- ═══ CTA ═══ -->
-  <section class="py-32 md:py-40 text-center section-alt">
+  <!-- CTA -->
+  <hr class="section-divider">
+  <section style="padding:6rem 0;text-align:center">
     <div class="narrow">
-      <h2 class="text-3xl md:text-5xl font-light mb-8">not sure what you <span class="text-accent">need</span>?</h2>
-      <p class="text-text-secondary text-lg mb-12">free land use assessment. we'll identify the right application for your property.</p>
-      <a href="/contact/" class="btn-primary">[ get your free consultation ]</a>
+      <h2 class="section-heading" style="text-align:center">Not sure what you need?</h2>
+      <p style="color:var(--color-text-secondary);margin-bottom:2.5rem">
+        We offer a free initial assessment to identify which application your property requires.
+      </p>
+      <a href="/contact/" class="btn-primary">Get a free assessment</a>
     </div>
   </section>
 

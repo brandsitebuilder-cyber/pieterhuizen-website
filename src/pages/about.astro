@@ -1,68 +1,89 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const schema = {"@context":"https://schema.org","@type":"AboutPage","name":"About Pieterhuizen Planning"};
 ---
 
-<BaseLayout title="About — Town Planners Cape Town" description="Established town planning consultancy serving the Western Cape — rezoning, subdivisions, land use applications." schema={schema}>
+<BaseLayout
+  title="About — Pieterhuizen Planning"
+  description="Town planning consultants based in Somerset West. Serving Cape Town, Stellenbosch and the Western Cape with rezoning, subdivisions and land use applications."
+>
 
-  <section class="pt-40 pb-16 md:pt-48 md:pb-20">
-    <div class="wrap">
-      <span class="tag mb-8">about</span>
-      <div class="grid md:grid-cols-2 gap-12 md:gap-24">
-        <h1 class="text-3xl md:text-5xl font-light leading-tight">town planning is <span class="text-accent">what we do</span></h1>
-        <p class="text-text-secondary text-lg leading-relaxed self-end">Professional land use consultants based in Somerset West, serving the entire Western Cape region since 2014.</p>
-      </div>
+  <!-- Hero -->
+  <section class="hero" style="min-height:50vh">
+    <div class="hero-image" style="background: url('/hero-bg.jpg') center/cover no-repeat"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" style="padding-bottom:4rem">
+      <div class="hero-label">Studio</div>
+      <h1 class="hero-title">About</h1>
+      <p class="hero-subtitle">
+        Town planning consultants committed to precision, local knowledge, and getting applications approved.
+      </p>
     </div>
   </section>
 
-  <!-- ═══ APPROACH ═══ -->
-  <div class="wrap pb-16 md:pb-24">
-    <div class="grid md:grid-cols-3 gap-px bg-border">
-      <div class="bg-surface p-8 md:p-10 border border-border">
-        <div class="text-accent text-sm mb-6 lowercase tracking-wider">01</div>
-        <h3 class="mb-3">assess</h3>
-        <p class="text-text-muted text-sm leading-relaxed">Every project starts with understanding your property's current zoning, its constraints, and its untapped potential. We review title deeds, zoning certificates, and municipal schemes.</p>
-      </div>
-      <div class="bg-surface p-8 md:p-10 border border-border">
-        <div class="text-accent text-sm mb-6 lowercase tracking-wider">02</div>
-        <h3 class="mb-3">strategize</h3>
-        <p class="text-text-muted text-sm leading-relaxed">We map the fastest path to approval — navigating SPLUMA, municipal bylaws, and heritage regulations. No two properties are the same, and neither are our strategies.</p>
-      </div>
-      <div class="bg-surface p-8 md:p-10 border border-border">
-        <div class="text-accent text-sm mb-6 lowercase tracking-wider">03</div>
-        <h3 class="mb-3">deliver</h3>
-        <p class="text-text-muted text-sm leading-relaxed">Motivation reports, site development plans, and council liaison — until your approval comes through. We stay with the application every step of the way.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ VALUES ═══ -->
-  <section class="py-32 md:py-40 section-alt">
-    <div class="wrap">
-      <span class="tag mb-10">our values</span>
-      <h2 class="text-3xl md:text-4xl font-light mb-20">what drives <span class="text-accent">us</span></h2>
-      <div class="grid md:grid-cols-3 gap-px bg-border">
-        <div class="bg-bg p-8 md:p-10 border border-border">
-          <h3 class="mb-3">experience</h3>
-          <p class="text-text-muted text-sm leading-relaxed">10+ years navigating Western Cape municipal planning systems. We know which applications succeed — and how to frame them. Over 50 approved projects across the region.</p>
-        </div>
-        <div class="bg-bg p-8 md:p-10 border border-border">
-          <h3 class="mb-3">reliability</h3>
-          <p class="text-text-muted text-sm leading-relaxed">Clear timelines, regular updates, and no surprises. Developers, architects and property investors trust us to deliver on time and within scope.</p>
-        </div>
-        <div class="bg-bg p-8 md:p-10 border border-border">
-          <h3 class="mb-3">results</h3>
-          <p class="text-text-muted text-sm leading-relaxed">We measure success by approvals. Every application is prepared with the precision that councils expect — and the advocacy they respond to.</p>
+  <!-- Split: Who we are (F+P style) -->
+  <section style="padding:6rem 0">
+    <div class="split-section">
+      <div class="split-image" style="background: url('/images/img-29561793.jpg') center/cover no-repeat"></div>
+      <div class="split-text">
+        <p style="font-size:1.125rem;margin-bottom:2rem">
+          &ldquo;We are a town planning consultancy for sustainable development and land use, founded on a commitment to getting it right.&rdquo;
+        </p>
+        <p style="font-size:0.8125rem;color:var(--color-text-muted)">Pieterhuizen Planning</p>
+        <div style="margin-top:2rem;display:flex;gap:1rem">
+          <a href="/contact/" class="btn-primary">Contact us</a>
+          <a href="/services/" class="btn-outline">View services</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-32 md:py-40 text-center">
-    <div class="narrow">
-      <h2 class="text-3xl md:text-5xl font-light mb-8">work with <span class="text-accent">us</span></h2>
-      <p class="text-text-secondary text-lg mb-12">free land use assessment. response within 24 hours.</p>
-      <a href="/contact/" class="btn-primary">[ get your free consultation ]</a>
+  <hr class="section-divider">
+
+  <!-- Approach -->
+  <section style="padding:6rem 0">
+    <div class="wrap">
+      <h2 class="section-heading">Approach</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0.5px">
+        <div class="split-text">
+          <h3 style="margin-bottom:1rem">Local knowledge</h3>
+          <p style="font-size:0.9375rem">Deep understanding of Western Cape municipalities &mdash; their zoning schemes, SDFs, and political dynamics. This is what gets applications approved.</p>
+        </div>
+        <div class="split-text">
+          <h3 style="margin-bottom:1rem">Regulatory precision</h3>
+          <p style="font-size:0.9375rem">SPLUMA-compliant applications prepared with meticulous attention to detail. Every motivation report is built to withstand council scrutiny.</p>
+        </div>
+        <div class="split-text">
+          <h3 style="margin-bottom:1rem">Full spectrum</h3>
+          <p style="font-size:0.9375rem">From initial feasibility to council approval. We coordinate architects, engineers, environmental specialists and legal teams so you don't have to.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Experience -->
+  <section style="padding:6rem 0">
+    <div class="wrap">
+      <h2 class="section-heading">Experience</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:2rem">
+        <div>
+          <div style="font-size:2.5rem;font-weight:200;margin-bottom:0.5rem">50+</div>
+          <div style="color:var(--color-text-muted);font-size:0.8125rem">Projects approved</div>
+        </div>
+        <div>
+          <div style="font-size:2.5rem;font-weight:200;margin-bottom:0.5rem">10+</div>
+          <div style="color:var(--color-text-muted);font-size:0.8125rem">Years experience</div>
+        </div>
+        <div>
+          <div style="font-size:2.5rem;font-weight:200;margin-bottom:0.5rem">3</div>
+          <div style="color:var(--color-text-muted);font-size:0.8125rem">Core regions</div>
+        </div>
+        <div>
+          <div style="font-size:2.5rem;font-weight:200;margin-bottom:0.5rem">100%</div>
+          <div style="color:var(--color-text-muted);font-size:0.8125rem">Compliance rate</div>
+        </div>
+      </div>
     </div>
   </section>
 
